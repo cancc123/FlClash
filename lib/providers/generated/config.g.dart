@@ -372,6 +372,58 @@ abstract class _$DavSetting extends $Notifier<DAVProps?> {
   }
 }
 
+@ProviderFor(XboardSetting)
+final xboardSettingProvider = XboardSettingProvider._();
+
+final class XboardSettingProvider
+    extends $NotifierProvider<XboardSetting, XboardAccount?> {
+  XboardSettingProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'xboardSettingProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$xboardSettingHash();
+
+  @$internal
+  @override
+  XboardSetting create() => XboardSetting();
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(XboardAccount? value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<XboardAccount?>(value),
+    );
+  }
+}
+
+String _$xboardSettingHash() => r'a8bb1692876653fb1dae735ad0a1d5cb8c3c8b85';
+
+abstract class _$XboardSetting extends $Notifier<XboardAccount?> {
+  XboardAccount? build();
+  @$mustCallSuper
+  @override
+  WhenComplete runBuild() {
+    final ref = this.ref as $Ref<XboardAccount?, XboardAccount?>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<XboardAccount?, XboardAccount?>,
+              XboardAccount?,
+              Object?,
+              Object?
+            >;
+    return element.handleCreate(ref, build);
+  }
+}
+
 @ProviderFor(HotKeyActions)
 final hotKeyActionsProvider = HotKeyActionsProvider._();
 
@@ -619,4 +671,4 @@ final class _ConfigProvider extends $FunctionalProvider<Config, Config, Config>
   }
 }
 
-String _$_configHash() => r'a9e717216fc1ca6b3526907bd578c4982bb6961a';
+String _$_configHash() => r'68fb30d7c014d576ade7d0b12a69e839cccb10ea';

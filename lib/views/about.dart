@@ -89,6 +89,12 @@ class AboutView extends ConsumerWidget {
             title: appLocalizations.more,
             items: [
               _buildLinkItem(
+                glyph: AppGlyphs.send,
+                title: appLocalizations.xboardTelegram,
+                url: 'https://t.me/cansexxx',
+                label: 't.me/cansexxx',
+              ),
+              _buildLinkItem(
                 glyph: AppGlyphs.code,
                 title: appLocalizations.project,
                 url: 'https://github.com/$repository',

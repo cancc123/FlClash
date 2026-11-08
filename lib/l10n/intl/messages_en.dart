@@ -33,7 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m4(detail) => "Couldn\'t clear the data: ${detail}";
 
   static String m5(code) =>
-      "Windows refused to run FlClashCore.exe (error ${code}). An app control policy such as Smart App Control or AppLocker blocks unsigned programs; allow FlClash in that policy or turn it off, then try again.";
+      "Windows refused to run FlClashCore.exe (error ${code}). An app control policy such as Smart App Control or AppLocker blocks unsigned programs; allow Xiaoxue in that policy or turn it off, then try again.";
 
   static String m6(name) =>
       "The app failed to finish launching twice in a row. To break the loop, the profile ${name} has been deselected and automatic setup was skipped. You can select it again at any time.";
@@ -158,7 +158,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Chrome and Firefox keep their own certificate stores, which need certutil: ${command}";
 
   static String m55(host) =>
-      "Add ${host} to the hostname list? FlClash can then read what is sent to it, cookies and passwords included.";
+      "Add ${host} to the hostname list? Xiaoxue can then read what is sent to it, cookies and passwords included.";
 
   static String m56(host) =>
       "Add -${host} to the top of the hostname list? The host is then never decrypted.";
@@ -176,7 +176,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "The old certificate, ${name}, could not be removed. Remove it from the trusted roots yourself.";
 
   static String m62(name) =>
-      "The old certificate, ${name}, is still among the system\'s trusted CAs. Allow FlClash root access in your root manager and regenerate, or remove the FlClash MITM CA module there and restart.";
+      "The old certificate, ${name}, is still among the system\'s trusted CAs. Allow Xiaoxue root access in your root manager and regenerate, or remove the FlClash MITM CA module there and restart.";
 
   static String m63(name) =>
       "Remove the old certificate, ${name}, in Settings under Security › Encryption & credentials › Trusted credentials › User, then install the new one.";
@@ -270,10 +270,13 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m99(date) => "Valid until ${date}";
 
-  static String m100(count) =>
+  static String m100(amount) =>
+      "An order of ${amount} is still unpaid. Cancel it and continue?";
+
+  static String m101(count) =>
       "${Intl.plural(count, one: '1 year ago', other: '${count} years ago')}";
 
-  static String m101(count) => "${Intl.plural(count, other: '${count}y ago')}";
+  static String m102(count) => "${Intl.plural(count, other: '${count}y ago')}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -558,7 +561,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "core": MessageLookupByLibrary.simpleMessage("Core"),
     "coreBlockedByPolicyTip": m5,
     "coreBlockedBySmartAppControlTip": MessageLookupByLibrary.simpleMessage(
-      "Windows Smart App Control blocked FlClashCore.exe because it is not signed. Open Windows Security → App & browser control → Smart App Control settings, choose Off, then start FlClash again. Smart App Control cannot be turned back on without reinstalling Windows.",
+      "Windows Smart App Control blocked FlClashCore.exe because it is not signed. Open Windows Security → App & browser control → Smart App Control settings, choose Off, then start Xiaoxue again. Smart App Control cannot be turned back on without reinstalling Windows.",
     ),
     "coreStatus": MessageLookupByLibrary.simpleMessage("Core status"),
     "country": MessageLookupByLibrary.simpleMessage("Region"),
@@ -688,7 +691,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Changes to this statement",
     ),
     "disclaimerDesc": MessageLookupByLibrary.simpleMessage(
-      "Before using FlClash (\"the Software\"), please read this statement carefully and make sure you understand it. Tapping \"Agree\" means you have read and understood what follows. If you do not want to continue, tap \"Exit\".",
+      "Before using Xiaoxue (\"the Software\"), please read this statement carefully and make sure you understand it. Tapping \"Agree\" means you have read and understood what follows. If you do not want to continue, tap \"Exit\".",
     ),
     "disclaimerLiabilityContent": MessageLookupByLibrary.simpleMessage(
       "To the maximum extent permitted by applicable law, neither the developers nor any contributor shall be liable for any direct, indirect, incidental, special, punitive, or consequential damages arising from the use of or inability to use the Software, including but not limited to data loss, device damage, network failures, business interruption, lost profits, or any resulting legal dispute, even if advised of the possibility of such damages.",
@@ -932,7 +935,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "headerRewrite": MessageLookupByLibrary.simpleMessage("Header rewrite"),
     "healthCheck": MessageLookupByLibrary.simpleMessage("Health check"),
     "helperCorruptTip": MessageLookupByLibrary.simpleMessage(
-      "Helper service unavailable; TUN mode cannot be enabled. Reinstall FlClash to restore it.",
+      "Helper service unavailable; TUN mode cannot be enabled. Reinstall Xiaoxue to restore it.",
     ),
     "hex": MessageLookupByLibrary.simpleMessage("Hex"),
     "hideFromList": MessageLookupByLibrary.simpleMessage("Hide from list"),
@@ -1032,7 +1035,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "init": MessageLookupByLibrary.simpleMessage("Init"),
     "initFailed": MessageLookupByLibrary.simpleMessage("Startup failed"),
     "initFailedTip": MessageLookupByLibrary.simpleMessage(
-      "FlClash ran into an error while starting and can\'t continue. Copy the details to report the problem. If it keeps happening, clearing the data usually lets the app start again.",
+      "Xiaoxue ran into an error while starting and can\'t continue. Copy the details to report the problem. If it keeps happening, clearing the data usually lets the app start again.",
     ),
     "initiator": MessageLookupByLibrary.simpleMessage("Initiator"),
     "initiatorShort": MessageLookupByLibrary.simpleMessage("From"),
@@ -1048,9 +1051,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "installCertificateSuccess": MessageLookupByLibrary.simpleMessage(
       "Certificate installed",
     ),
-    "installedAppsPermissionDeniedMessage": MessageLookupByLibrary.simpleMessage(
-      "The app list permission was denied, so installed apps cannot be listed. Please grant it manually in system settings.",
-    ),
+    "installedAppsPermissionDeniedMessage":
+        MessageLookupByLibrary.simpleMessage(
+          "The app list permission was denied, so installed apps cannot be listed. Please grant it manually in system settings.",
+        ),
     "installedAppsPermissionDesc": MessageLookupByLibrary.simpleMessage(
       "This system hides the installed app list until the permission is granted. Authorize it to configure the per-app proxy.",
     ),
@@ -1292,7 +1296,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "mitmDecryptHostTip": m55,
     "mitmEnableTip": MessageLookupByLibrary.simpleMessage(
-      "FlClash will be able to read everything sent to the decrypted hosts, cookies and passwords included. Turn this on only for hosts you mean to rewrite.",
+      "Xiaoxue will be able to read everything sent to the decrypted hosts, cookies and passwords included. Turn this on only for hosts you mean to rewrite.",
     ),
     "mitmExcludeHost": MessageLookupByLibrary.simpleMessage(
       "Exclude from decryption",
@@ -1628,7 +1632,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Regenerate certificate",
     ),
     "regenerateCertificateTip": MessageLookupByLibrary.simpleMessage(
-      "The new certificate replaces the current one, which FlClash takes out of this device\'s trusted roots where it can. Every other device that trusts the current one has to install the new one.",
+      "The new certificate replaces the current one, which Xiaoxue takes out of this device\'s trusted roots where it can. Every other device that trusts the current one has to install the new one.",
     ),
     "regex": MessageLookupByLibrary.simpleMessage("Regex"),
     "releaseMemory": MessageLookupByLibrary.simpleMessage("Release memory"),
@@ -1891,10 +1895,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Sent. Confirm the import on the other device.",
     ),
     "sendFromPhonePageTitle": MessageLookupByLibrary.simpleMessage(
-      "Send a link to FlClash",
+      "Send a link to Xiaoxue",
     ),
     "sendFromPhonePermissionDenied": MessageLookupByLibrary.simpleMessage(
-      "Receiving a link from your phone needs the Nearby devices permission, which lets FlClash reach the local network. Turn it on in the app\'s settings.",
+      "Receiving a link from your phone needs the Nearby devices permission, which lets Xiaoxue reach the local network. Turn it on in the app\'s settings.",
     ),
     "sendFromPhoneTip": MessageLookupByLibrary.simpleMessage(
       "Scan the code with your phone\'s camera and paste the link on the page that opens. Both devices need to be on the same network.",
@@ -1936,7 +1940,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "No proxy could be read from the links",
     ),
     "shareQrcodeTip": MessageLookupByLibrary.simpleMessage(
-      "Scan with FlClash on another device to import this profile.",
+      "Scan with Xiaoxue on another device to import this profile.",
     ),
     "show": MessageLookupByLibrary.simpleMessage("Show"),
     "showLess": MessageLookupByLibrary.simpleMessage("Collapse"),
@@ -2119,7 +2123,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "The update has downloaded. Tap to install it.",
     ),
     "updateRestartTip": MessageLookupByLibrary.simpleMessage(
-      "FlClash closes to install the update and opens again when it is done.",
+      "Xiaoxue closes to install the update and opens again when it is done.",
     ),
     "upload": MessageLookupByLibrary.simpleMessage("Upload"),
     "uploadBandwidth": MessageLookupByLibrary.simpleMessage("Upload bandwidth"),
@@ -2149,8 +2153,129 @@ class MessageLookup extends MessageLookupByLibrary {
     "writeToSystemDesc": MessageLookupByLibrary.simpleMessage(
       "Write to system also sets the system clock; Android ignores it.",
     ),
-    "yearsAgo": m100,
-    "yearsAgoShort": m101,
+    "xboardAccount": MessageLookupByLibrary.simpleMessage(
+      "Xiaoxue airport account",
+    ),
+    "xboardAmount": MessageLookupByLibrary.simpleMessage("Amount"),
+    "xboardBuy": MessageLookupByLibrary.simpleMessage("Buy now"),
+    "xboardBuyOrRenew": MessageLookupByLibrary.simpleMessage("Buy / renew"),
+    "xboardBuySubscription": MessageLookupByLibrary.simpleMessage(
+      "Buy subscription",
+    ),
+    "xboardCancelOrder": MessageLookupByLibrary.simpleMessage("Cancel order"),
+    "xboardCancelOrderFailed": MessageLookupByLibrary.simpleMessage(
+      "Could not cancel the order",
+    ),
+    "xboardCancelPendingOrder": MessageLookupByLibrary.simpleMessage(
+      "Cancel and continue",
+    ),
+    "xboardCheckAgain": MessageLookupByLibrary.simpleMessage("Check again"),
+    "xboardConfirmPassword": MessageLookupByLibrary.simpleMessage(
+      "Confirm password",
+    ),
+    "xboardCoupon": MessageLookupByLibrary.simpleMessage("Coupon"),
+    "xboardDeviceLimit": MessageLookupByLibrary.simpleMessage("Devices"),
+    "xboardHasAccount": MessageLookupByLibrary.simpleMessage(
+      "Already have an account? Sign in",
+    ),
+    "xboardImportFailed": MessageLookupByLibrary.simpleMessage(
+      "Could not import the subscription",
+    ),
+    "xboardImportSuccess": MessageLookupByLibrary.simpleMessage(
+      "Signed in, subscription imported",
+    ),
+    "xboardInvalidCredentials": MessageLookupByLibrary.simpleMessage(
+      "Wrong username or password",
+    ),
+    "xboardInvalidResponse": MessageLookupByLibrary.simpleMessage(
+      "The server answered something unexpected",
+    ),
+    "xboardNetworkError": MessageLookupByLibrary.simpleMessage(
+      "Cannot reach the server, check the network",
+    ),
+    "xboardNoAccount": MessageLookupByLibrary.simpleMessage(
+      "No account? Register",
+    ),
+    "xboardNoSubscription": MessageLookupByLibrary.simpleMessage(
+      "No subscription yet, buy a plan first",
+    ),
+    "xboardOpenInBrowser": MessageLookupByLibrary.simpleMessage(
+      "Open in browser",
+    ),
+    "xboardOrderNo": MessageLookupByLibrary.simpleMessage("Order"),
+    "xboardPasswordMismatch": MessageLookupByLibrary.simpleMessage(
+      "The two passwords do not match",
+    ),
+    "xboardPay": MessageLookupByLibrary.simpleMessage("Pay"),
+    "xboardPayMethod": MessageLookupByLibrary.simpleMessage("Payment"),
+    "xboardPayNow": MessageLookupByLibrary.simpleMessage("Pay now"),
+    "xboardPayTip": MessageLookupByLibrary.simpleMessage(
+      "The payment code lives on the gateway page. Tap “Pay now” to open it; this page refreshes once paid.",
+    ),
+    "xboardPaymentTimeout": MessageLookupByLibrary.simpleMessage(
+      "No payment seen yet, check again later",
+    ),
+    "xboardPendingOrderTip": m100,
+    "xboardPendingOrderTitle": MessageLookupByLibrary.simpleMessage(
+      "Unfinished order",
+    ),
+    "xboardPeriodHalfYearly": MessageLookupByLibrary.simpleMessage(
+      "Half-yearly",
+    ),
+    "xboardPeriodMonthly": MessageLookupByLibrary.simpleMessage("Monthly"),
+    "xboardPeriodOnetime": MessageLookupByLibrary.simpleMessage("One-time"),
+    "xboardPeriodQuarterly": MessageLookupByLibrary.simpleMessage("Quarterly"),
+    "xboardPeriodThreeYearly": MessageLookupByLibrary.simpleMessage(
+      "Three years",
+    ),
+    "xboardPeriodTwoYearly": MessageLookupByLibrary.simpleMessage("Two years"),
+    "xboardPeriodYearly": MessageLookupByLibrary.simpleMessage("Yearly"),
+    "xboardPlanDetail": MessageLookupByLibrary.simpleMessage("Plan details"),
+    "xboardPlanDetailFold": MessageLookupByLibrary.simpleMessage("View"),
+    "xboardPlans": MessageLookupByLibrary.simpleMessage("Plans"),
+    "xboardPurchaseFailed": MessageLookupByLibrary.simpleMessage(
+      "Could not place the order, try again later",
+    ),
+    "xboardPurchaseSuccess": MessageLookupByLibrary.simpleMessage(
+      "Paid, subscription updated",
+    ),
+    "xboardRateLimited": MessageLookupByLibrary.simpleMessage(
+      "Too many failed attempts, try again later",
+    ),
+    "xboardRefresh": MessageLookupByLibrary.simpleMessage(
+      "Refresh subscription",
+    ),
+    "xboardRefreshSuccess": MessageLookupByLibrary.simpleMessage(
+      "Subscription refreshed",
+    ),
+    "xboardRegister": MessageLookupByLibrary.simpleMessage("Register"),
+    "xboardRegisterTip": MessageLookupByLibrary.simpleMessage(
+      "Registering creates an airport account; the password needs 8 characters.",
+    ),
+    "xboardRenew": MessageLookupByLibrary.simpleMessage("Renew"),
+    "xboardRequestRejected": MessageLookupByLibrary.simpleMessage(
+      "The server refused the request",
+    ),
+    "xboardResetTraffic": MessageLookupByLibrary.simpleMessage("Reset traffic"),
+    "xboardScanTip": MessageLookupByLibrary.simpleMessage(
+      "Scan the code with WeChat. This page refreshes itself once paid.",
+    ),
+    "xboardSessionExpired": MessageLookupByLibrary.simpleMessage(
+      "Sign-in expired, sign in again",
+    ),
+    "xboardSignIn": MessageLookupByLibrary.simpleMessage("Sign in"),
+    "xboardSignInTip": MessageLookupByLibrary.simpleMessage(
+      "Signs in to the Xiaoxue airport server and imports this account\'s subscription.",
+    ),
+    "xboardSignOut": MessageLookupByLibrary.simpleMessage("Sign out"),
+    "xboardSpeedLimit": MessageLookupByLibrary.simpleMessage("Speed limit"),
+    "xboardSubscription": MessageLookupByLibrary.simpleMessage("Subscription"),
+    "xboardSubscriptionUnavailable": MessageLookupByLibrary.simpleMessage(
+      "No usable plan: expired or out of traffic",
+    ),
+    "xboardTelegram": MessageLookupByLibrary.simpleMessage("Xiaoxue Telegram"),
+    "yearsAgo": m101,
+    "yearsAgoShort": m102,
     "yes": MessageLookupByLibrary.simpleMessage("Yes"),
     "zhCN": MessageLookupByLibrary.simpleMessage("Simplified Chinese"),
   };

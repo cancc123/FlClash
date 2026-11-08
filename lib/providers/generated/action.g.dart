@@ -40,7 +40,7 @@ final class CommonActionProvider extends $NotifierProvider<CommonAction, void> {
   }
 }
 
-String _$commonActionHash() => r'c0861209c71a2996971e25c98f59f20770a8b848';
+String _$commonActionHash() => r'15baafcc30c4fd1bdaada3a060879e8430541bdc';
 
 abstract class _$CommonAction extends $Notifier<void> {
   void build();
@@ -193,7 +193,7 @@ final class CoreActionProvider extends $NotifierProvider<CoreAction, void> {
   }
 }
 
-String _$coreActionHash() => r'66ca02d5e03d6de90ff4cf7849fd42b48c0d1313';
+String _$coreActionHash() => r'942a3b5732a4bf200f8e7d685fb5d6e37c01af9f';
 
 abstract class _$CoreAction extends $Notifier<void> {
   void build();
@@ -244,7 +244,7 @@ final class SystemActionProvider extends $NotifierProvider<SystemAction, void> {
   }
 }
 
-String _$systemActionHash() => r'9e7580ff094045c6261a66512301f98a7a505c3d';
+String _$systemActionHash() => r'2f2033a14a30caee435e12e4b0bcfaf407fdaffb';
 
 abstract class _$SystemAction extends $Notifier<void> {
   void build();
@@ -470,6 +470,57 @@ abstract class _$ProfilesAction extends $Notifier<void> {
   }
 }
 
+@ProviderFor(XboardAction)
+final xboardActionProvider = XboardActionProvider._();
+
+final class XboardActionProvider extends $NotifierProvider<XboardAction, void> {
+  XboardActionProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'xboardActionProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$xboardActionHash();
+
+  @$internal
+  @override
+  XboardAction create() => XboardAction();
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(void value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<void>(value),
+    );
+  }
+}
+
+String _$xboardActionHash() => r'eba3c791edf9dc2b0e763208b867e67040a32d1e';
+
+abstract class _$XboardAction extends $Notifier<void> {
+  void build();
+  @$mustCallSuper
+  @override
+  WhenComplete runBuild() {
+    final ref = this.ref as $Ref<void, void>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<void, void>,
+              void,
+              Object?,
+              Object?
+            >;
+    return element.handleCreate(ref, build);
+  }
+}
+
 @ProviderFor(ScriptsAction)
 final scriptsActionProvider = ScriptsActionProvider._();
 
@@ -554,7 +605,7 @@ final class MitmModulesActionProvider
   }
 }
 
-String _$mitmModulesActionHash() => r'cd33ffb399209820ebc80ad9d649c30e1f2ddec0';
+String _$mitmModulesActionHash() => r'99278008215d7cbe518bc879470ce01920fea82f';
 
 abstract class _$MitmModulesAction extends $Notifier<void> {
   void build();
@@ -763,7 +814,7 @@ final class ResourcesActionProvider
   }
 }
 
-String _$resourcesActionHash() => r'2034421cda9f4889f496aea8cd40e17c724ec4f9';
+String _$resourcesActionHash() => r'1d35501f1e3d2306e58da6b1759cb5d86c5de529';
 
 abstract class _$ResourcesAction extends $Notifier<void> {
   void build();

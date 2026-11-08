@@ -32,7 +32,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m4(detail) => "Не удалось очистить данные: ${detail}";
 
   static String m5(code) =>
-      "Windows отказалась запускать FlClashCore.exe (ошибка ${code}). Политики контроля приложений, такие как Smart App Control или AppLocker, блокируют неподписанные программы; разрешите FlClash в этой политике или отключите её и повторите попытку.";
+      "Windows отказалась запускать FlClashCore.exe (ошибка ${code}). Политики контроля приложений, такие как Smart App Control или AppLocker, блокируют неподписанные программы; разрешите Xiaoxue в этой политике или отключите её и повторите попытку.";
 
   static String m6(name) =>
       "Приложение два раза подряд не смогло завершить запуск. Чтобы разорвать цикл, профиль ${name} снят с выбора, а автоматическая настройка пропущена. Вы можете выбрать его снова в любой момент.";
@@ -158,7 +158,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Chrome и Firefox используют собственные хранилища сертификатов, для которых нужен certutil: ${command}";
 
   static String m55(host) =>
-      "Добавить ${host} в список имён хостов? FlClash сможет читать всё, что на него отправляется, включая cookie и пароли.";
+      "Добавить ${host} в список имён хостов? Xiaoxue сможет читать всё, что на него отправляется, включая cookie и пароли.";
 
   static String m56(host) =>
       "Добавить -${host} в начало списка имён хостов? После этого узел никогда не будет расшифровываться.";
@@ -177,7 +177,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Не удалось удалить старый сертификат ${name}. Удалите его из доверенных корневых сертификатов вручную.";
 
   static String m62(name) =>
-      "Старый сертификат ${name} всё ещё среди доверенных системных сертификатов. Разрешите FlClash доступ root в менеджере root и создайте сертификат заново или удалите там модуль «FlClash MITM CA» и перезагрузите устройство.";
+      "Старый сертификат ${name} всё ещё среди доверенных системных сертификатов. Разрешите Xiaoxue доступ root в менеджере root и создайте сертификат заново или удалите там модуль «FlClash MITM CA» и перезагрузите устройство.";
 
   static String m63(name) =>
       "Удалите старый сертификат ${name} в настройках: Безопасность › Шифрование и учётные данные › Надёжные учётные данные › Пользователь, затем установите новый.";
@@ -269,10 +269,13 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m99(date) => "Действителен до ${date}";
 
-  static String m100(count) =>
-      "${Intl.plural(count, one: '${count} год назад', few: '${count} года назад', many: '${count} лет назад', other: '${count} года назад')}";
+  static String m100(amount) =>
+      "Заказ на ${amount} не оплачен. Отменить и продолжить?";
 
   static String m101(count) =>
+      "${Intl.plural(count, one: '${count} год назад', few: '${count} года назад', many: '${count} лет назад', other: '${count} года назад')}";
+
+  static String m102(count) =>
       "${Intl.plural(count, one: '${count} г. назад', few: '${count} г. назад', many: '${count} л. назад', other: '${count} г. назад')}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -586,7 +589,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "core": MessageLookupByLibrary.simpleMessage("Ядро"),
     "coreBlockedByPolicyTip": m5,
     "coreBlockedBySmartAppControlTip": MessageLookupByLibrary.simpleMessage(
-      "Smart App Control в Windows заблокировал неподписанный FlClashCore.exe. Откройте Безопасность Windows → Управление приложениями и браузером → Параметры Smart App Control, выберите «Выкл.» и снова запустите FlClash. Повторно включить Smart App Control без переустановки Windows нельзя.",
+      "Smart App Control в Windows заблокировал неподписанный FlClashCore.exe. Откройте Безопасность Windows → Управление приложениями и браузером → Параметры Smart App Control, выберите «Выкл.» и снова запустите Xiaoxue. Повторно включить Smart App Control без переустановки Windows нельзя.",
     ),
     "coreStatus": MessageLookupByLibrary.simpleMessage("Статус ядра"),
     "country": MessageLookupByLibrary.simpleMessage("Регион"),
@@ -720,7 +723,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Изменения заявления",
     ),
     "disclaimerDesc": MessageLookupByLibrary.simpleMessage(
-      "Перед использованием FlClash («Программа») внимательно прочитайте это заявление и убедитесь, что понимаете его. Нажимая «Согласен», вы подтверждаете, что прочитали и поняли изложенное ниже. Если не хотите продолжать, нажмите «Выход».",
+      "Перед использованием Xiaoxue («Программа») внимательно прочитайте это заявление и убедитесь, что понимаете его. Нажимая «Согласен», вы подтверждаете, что прочитали и поняли изложенное ниже. Если не хотите продолжать, нажмите «Выход».",
     ),
     "disclaimerLiabilityContent": MessageLookupByLibrary.simpleMessage(
       "В максимальной степени, допустимой применимым законодательством, ни разработчики, ни участники проекта не несут ответственности за любой прямой, косвенный, случайный, особый, штрафной или последующий ущерб, возникший в результате использования или невозможности использования Программы, включая, помимо прочего, потерю данных, повреждение устройства, сбои сети, прерывание деятельности, упущенную выгоду или связанные с этим правовые споры, даже если они были предупреждены о возможности такого ущерба.",
@@ -976,7 +979,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "healthCheck": MessageLookupByLibrary.simpleMessage("Проверка состояния"),
     "helperCorruptTip": MessageLookupByLibrary.simpleMessage(
-      "Служба Helper недоступна, поэтому TUN-режим включить нельзя. Переустановите FlClash.",
+      "Служба Helper недоступна, поэтому TUN-режим включить нельзя. Переустановите Xiaoxue.",
     ),
     "hex": MessageLookupByLibrary.simpleMessage("Hex"),
     "hideFromList": MessageLookupByLibrary.simpleMessage("Скрыть из списка"),
@@ -1080,7 +1083,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "init": MessageLookupByLibrary.simpleMessage("Инициализация"),
     "initFailed": MessageLookupByLibrary.simpleMessage("Не удалось запустить"),
     "initFailedTip": MessageLookupByLibrary.simpleMessage(
-      "При запуске FlClash произошла ошибка, и работа не может быть продолжена. Скопируйте подробности, чтобы сообщить о проблеме. Если ошибка повторяется, очистка данных обычно позволяет снова запустить приложение.",
+      "При запуске Xiaoxue произошла ошибка, и работа не может быть продолжена. Скопируйте подробности, чтобы сообщить о проблеме. Если ошибка повторяется, очистка данных обычно позволяет снова запустить приложение.",
     ),
     "initiator": MessageLookupByLibrary.simpleMessage("Инициатор"),
     "initiatorShort": MessageLookupByLibrary.simpleMessage("Источник"),
@@ -1096,9 +1099,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "installCertificateSuccess": MessageLookupByLibrary.simpleMessage(
       "Сертификат установлен",
     ),
-    "installedAppsPermissionDeniedMessage": MessageLookupByLibrary.simpleMessage(
-      "Разрешение на список приложений отклонено, поэтому установленные приложения недоступны. Предоставьте его вручную в системных настройках.",
-    ),
+    "installedAppsPermissionDeniedMessage":
+        MessageLookupByLibrary.simpleMessage(
+          "Разрешение на список приложений отклонено, поэтому установленные приложения недоступны. Предоставьте его вручную в системных настройках.",
+        ),
     "installedAppsPermissionDesc": MessageLookupByLibrary.simpleMessage(
       "Эта система не выдаёт список установленных приложений без разрешения. Предоставьте его, чтобы настроить прокси для отдельных приложений.",
     ),
@@ -1358,7 +1362,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "mitmDecryptHostTip": m55,
     "mitmEnableTip": MessageLookupByLibrary.simpleMessage(
-      "FlClash сможет читать всё, что отправляется на расшифровываемые узлы, включая cookie и пароли. Включайте только для узлов, которые нужно перезаписывать.",
+      "Xiaoxue сможет читать всё, что отправляется на расшифровываемые узлы, включая cookie и пароли. Включайте только для узлов, которые нужно перезаписывать.",
     ),
     "mitmExcludeHost": MessageLookupByLibrary.simpleMessage(
       "Исключить из расшифровки",
@@ -1481,7 +1485,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "nameserverPolicyDesc": MessageLookupByLibrary.simpleMessage(
       "Совпавшие домены используют указанный здесь DNS-сервер вместо Nameserver и Fallback.",
     ),
-    "navigationBarStyle": MessageLookupByLibrary.simpleMessage("Нижняя панель"),
+    "navigationBarStyle": MessageLookupByLibrary.simpleMessage(
+      "Нижняя серверь",
+    ),
     "network": MessageLookupByLibrary.simpleMessage("Сеть"),
     "networkAccessDeniedError": m67,
     "networkBadResponseError": m68,
@@ -1708,7 +1714,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Пересоздать сертификат",
     ),
     "regenerateCertificateTip": MessageLookupByLibrary.simpleMessage(
-      "Новый сертификат заменит текущий; FlClash по возможности удалит текущий из доверенных корневых сертификатов этого устройства. На каждое другое устройство, доверяющее текущему, нужно установить новый.",
+      "Новый сертификат заменит текущий; Xiaoxue по возможности удалит текущий из доверенных корневых сертификатов этого устройства. На каждое другое устройство, доверяющее текущему, нужно установить новый.",
     ),
     "regex": MessageLookupByLibrary.simpleMessage("Регулярное выражение"),
     "releaseMemory": MessageLookupByLibrary.simpleMessage("Освободить память"),
@@ -1989,10 +1995,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Отправлено. Подтвердите импорт на другом устройстве.",
     ),
     "sendFromPhonePageTitle": MessageLookupByLibrary.simpleMessage(
-      "Отправить ссылку в FlClash",
+      "Отправить ссылку в Xiaoxue",
     ),
     "sendFromPhonePermissionDenied": MessageLookupByLibrary.simpleMessage(
-      "Чтобы получить ссылку с телефона, FlClash нужно разрешение «Устройства поблизости» для доступа к локальной сети. Включите его в настройках приложения.",
+      "Чтобы получить ссылку с телефона, Xiaoxue нужно разрешение «Устройства поблизости» для доступа к локальной сети. Включите его в настройках приложения.",
     ),
     "sendFromPhoneTip": MessageLookupByLibrary.simpleMessage(
       "Отсканируйте код камерой телефона и вставьте ссылку на открывшейся странице. Оба устройства должны быть в одной сети.",
@@ -2034,7 +2040,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Не удалось прочитать прокси из ссылок",
     ),
     "shareQrcodeTip": MessageLookupByLibrary.simpleMessage(
-      "Отсканируйте в FlClash на другом устройстве, чтобы импортировать этот профиль.",
+      "Отсканируйте в Xiaoxue на другом устройстве, чтобы импортировать этот профиль.",
     ),
     "show": MessageLookupByLibrary.simpleMessage("Показать"),
     "showLess": MessageLookupByLibrary.simpleMessage("Свернуть"),
@@ -2043,7 +2049,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Кнопка остановки в уведомлении",
     ),
     "showPassword": MessageLookupByLibrary.simpleMessage("Показать пароль"),
-    "sidebar": MessageLookupByLibrary.simpleMessage("Боковая панель"),
+    "sidebar": MessageLookupByLibrary.simpleMessage("Боковая серверь"),
     "silentLaunch": MessageLookupByLibrary.simpleMessage("Тихий запуск"),
     "singleImport": MessageLookupByLibrary.simpleMessage("По одному"),
     "singleShareLinkOnly": MessageLookupByLibrary.simpleMessage(
@@ -2229,7 +2235,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Обновление загружено. Нажмите, чтобы установить.",
     ),
     "updateRestartTip": MessageLookupByLibrary.simpleMessage(
-      "FlClash закроется для установки обновления и снова откроется после завершения.",
+      "Xiaoxue закроется для установки обновления и снова откроется после завершения.",
     ),
     "upload": MessageLookupByLibrary.simpleMessage("Отдача"),
     "uploadBandwidth": MessageLookupByLibrary.simpleMessage("Скорость отдачи"),
@@ -2267,8 +2273,127 @@ class MessageLookup extends MessageLookupByLibrary {
     "writeToSystemDesc": MessageLookupByLibrary.simpleMessage(
       "«Записывать в систему» также устанавливает системные часы; Android это игнорирует.",
     ),
-    "yearsAgo": m100,
-    "yearsAgoShort": m101,
+    "xboardAccount": MessageLookupByLibrary.simpleMessage("аккаунт Xiaoxue"),
+    "xboardAmount": MessageLookupByLibrary.simpleMessage("Сумма"),
+    "xboardBuy": MessageLookupByLibrary.simpleMessage("Купить"),
+    "xboardBuyOrRenew": MessageLookupByLibrary.simpleMessage(
+      "Купить / продлить",
+    ),
+    "xboardBuySubscription": MessageLookupByLibrary.simpleMessage(
+      "Купить подписку",
+    ),
+    "xboardCancelOrder": MessageLookupByLibrary.simpleMessage("Отменить заказ"),
+    "xboardCancelOrderFailed": MessageLookupByLibrary.simpleMessage(
+      "Не удалось отменить заказ",
+    ),
+    "xboardCancelPendingOrder": MessageLookupByLibrary.simpleMessage(
+      "Отменить и продолжить",
+    ),
+    "xboardCheckAgain": MessageLookupByLibrary.simpleMessage("Проверить снова"),
+    "xboardConfirmPassword": MessageLookupByLibrary.simpleMessage(
+      "Повторите пароль",
+    ),
+    "xboardCoupon": MessageLookupByLibrary.simpleMessage("Купон"),
+    "xboardDeviceLimit": MessageLookupByLibrary.simpleMessage("Устройств"),
+    "xboardHasAccount": MessageLookupByLibrary.simpleMessage(
+      "Уже есть аккаунт? Войти",
+    ),
+    "xboardImportFailed": MessageLookupByLibrary.simpleMessage(
+      "Не удалось импортировать подписку",
+    ),
+    "xboardImportSuccess": MessageLookupByLibrary.simpleMessage(
+      "Вход выполнен, подписка импортирована",
+    ),
+    "xboardInvalidCredentials": MessageLookupByLibrary.simpleMessage(
+      "Неверное имя пользователя или пароль",
+    ),
+    "xboardInvalidResponse": MessageLookupByLibrary.simpleMessage(
+      "Панель вернула неожиданный ответ",
+    ),
+    "xboardNetworkError": MessageLookupByLibrary.simpleMessage(
+      "Панель недоступна, проверьте сеть",
+    ),
+    "xboardNoAccount": MessageLookupByLibrary.simpleMessage(
+      "Нет аккаунта? Зарегистрироваться",
+    ),
+    "xboardNoSubscription": MessageLookupByLibrary.simpleMessage(
+      "Подписки нет, сначала купите тариф",
+    ),
+    "xboardOpenInBrowser": MessageLookupByLibrary.simpleMessage(
+      "Открыть в браузере",
+    ),
+    "xboardOrderNo": MessageLookupByLibrary.simpleMessage("Заказ"),
+    "xboardPasswordMismatch": MessageLookupByLibrary.simpleMessage(
+      "Пароли не совпадают",
+    ),
+    "xboardPay": MessageLookupByLibrary.simpleMessage("Оплата"),
+    "xboardPayMethod": MessageLookupByLibrary.simpleMessage("Способ оплаты"),
+    "xboardPayNow": MessageLookupByLibrary.simpleMessage("Оплатить"),
+    "xboardPayTip": MessageLookupByLibrary.simpleMessage(
+      "QR-код для оплаты находится на странице оплаты. Нажмите «Оплатить», чтобы открыть её.",
+    ),
+    "xboardPaymentTimeout": MessageLookupByLibrary.simpleMessage(
+      "Оплата не найдена, проверьте позже",
+    ),
+    "xboardPendingOrderTip": m100,
+    "xboardPendingOrderTitle": MessageLookupByLibrary.simpleMessage(
+      "Незавершённый заказ",
+    ),
+    "xboardPeriodHalfYearly": MessageLookupByLibrary.simpleMessage("Полгода"),
+    "xboardPeriodMonthly": MessageLookupByLibrary.simpleMessage("Месяц"),
+    "xboardPeriodOnetime": MessageLookupByLibrary.simpleMessage("Разово"),
+    "xboardPeriodQuarterly": MessageLookupByLibrary.simpleMessage("Квартал"),
+    "xboardPeriodThreeYearly": MessageLookupByLibrary.simpleMessage("Три года"),
+    "xboardPeriodTwoYearly": MessageLookupByLibrary.simpleMessage("Два года"),
+    "xboardPeriodYearly": MessageLookupByLibrary.simpleMessage("Год"),
+    "xboardPlanDetail": MessageLookupByLibrary.simpleMessage("О тарифе"),
+    "xboardPlanDetailFold": MessageLookupByLibrary.simpleMessage("Смотреть"),
+    "xboardPlans": MessageLookupByLibrary.simpleMessage("Тарифы"),
+    "xboardPurchaseFailed": MessageLookupByLibrary.simpleMessage(
+      "Не удалось создать заказ, повторите позже",
+    ),
+    "xboardPurchaseSuccess": MessageLookupByLibrary.simpleMessage(
+      "Оплачено, подписка обновлена",
+    ),
+    "xboardRateLimited": MessageLookupByLibrary.simpleMessage(
+      "Слишком много неудачных попыток, повторите позже",
+    ),
+    "xboardRefresh": MessageLookupByLibrary.simpleMessage("Обновить подписку"),
+    "xboardRefreshSuccess": MessageLookupByLibrary.simpleMessage(
+      "Подписка обновлена",
+    ),
+    "xboardRegister": MessageLookupByLibrary.simpleMessage("Регистрация"),
+    "xboardRegisterTip": MessageLookupByLibrary.simpleMessage(
+      "Регистрация создаёт аккаунт; пароль не короче 8 символов.",
+    ),
+    "xboardRenew": MessageLookupByLibrary.simpleMessage("Продлить"),
+    "xboardRequestRejected": MessageLookupByLibrary.simpleMessage(
+      "Панель отклонила запрос",
+    ),
+    "xboardResetTraffic": MessageLookupByLibrary.simpleMessage(
+      "Сбросить трафик",
+    ),
+    "xboardScanTip": MessageLookupByLibrary.simpleMessage(
+      "Отсканируйте код в WeChat. Страница обновится после оплаты.",
+    ),
+    "xboardSessionExpired": MessageLookupByLibrary.simpleMessage(
+      "Сеанс истёк, войдите снова",
+    ),
+    "xboardSignIn": MessageLookupByLibrary.simpleMessage("Войти"),
+    "xboardSignInTip": MessageLookupByLibrary.simpleMessage(
+      "Вход в серверь Xiaoxue и импорт подписки этого аккаунта.",
+    ),
+    "xboardSignOut": MessageLookupByLibrary.simpleMessage("Выйти"),
+    "xboardSpeedLimit": MessageLookupByLibrary.simpleMessage(
+      "Ограничение скорости",
+    ),
+    "xboardSubscription": MessageLookupByLibrary.simpleMessage("Подписка"),
+    "xboardSubscriptionUnavailable": MessageLookupByLibrary.simpleMessage(
+      "Нет доступного тарифа: истёк или трафик исчерпан",
+    ),
+    "xboardTelegram": MessageLookupByLibrary.simpleMessage("Telegram Xiaoxue"),
+    "yearsAgo": m101,
+    "yearsAgoShort": m102,
     "yes": MessageLookupByLibrary.simpleMessage("Да"),
     "zhCN": MessageLookupByLibrary.simpleMessage("Упрощённый китайский"),
   };

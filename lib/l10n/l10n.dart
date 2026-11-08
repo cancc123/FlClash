@@ -725,20 +725,20 @@ class AppLocalizations {
     );
   }
 
-  /// `Receiving a link from your phone needs the Nearby devices permission, which lets FlClash reach the local network. Turn it on in the app's settings.`
+  /// `Receiving a link from your phone needs the Nearby devices permission, which lets Xiaoxue reach the local network. Turn it on in the app's settings.`
   String get sendFromPhonePermissionDenied {
     return Intl.message(
-      'Receiving a link from your phone needs the Nearby devices permission, which lets FlClash reach the local network. Turn it on in the app\'s settings.',
+      'Receiving a link from your phone needs the Nearby devices permission, which lets Xiaoxue reach the local network. Turn it on in the app\'s settings.',
       name: 'sendFromPhonePermissionDenied',
       desc: '',
       args: [],
     );
   }
 
-  /// `Send a link to FlClash`
+  /// `Send a link to Xiaoxue`
   String get sendFromPhonePageTitle {
     return Intl.message(
-      'Send a link to FlClash',
+      'Send a link to Xiaoxue',
       name: 'sendFromPhonePageTitle',
       desc: '',
       args: [],
@@ -780,10 +780,10 @@ class AppLocalizations {
     );
   }
 
-  /// `Scan with FlClash on another device to import this profile.`
+  /// `Scan with Xiaoxue on another device to import this profile.`
   String get shareQrcodeTip {
     return Intl.message(
-      'Scan with FlClash on another device to import this profile.',
+      'Scan with Xiaoxue on another device to import this profile.',
       name: 'shareQrcodeTip',
       desc: '',
       args: [],
@@ -2331,10 +2331,10 @@ class AppLocalizations {
     return Intl.message('Disclaimer', name: 'disclaimer', desc: '', args: []);
   }
 
-  /// `Before using FlClash ("the Software"), please read this statement carefully and make sure you understand it. Tapping "Agree" means you have read and understood what follows. If you do not want to continue, tap "Exit".`
+  /// `Before using Xiaoxue ("the Software"), please read this statement carefully and make sure you understand it. Tapping "Agree" means you have read and understood what follows. If you do not want to continue, tap "Exit".`
   String get disclaimerDesc {
     return Intl.message(
-      'Before using FlClash ("the Software"), please read this statement carefully and make sure you understand it. Tapping "Agree" means you have read and understood what follows. If you do not want to continue, tap "Exit".',
+      'Before using Xiaoxue ("the Software"), please read this statement carefully and make sure you understand it. Tapping "Agree" means you have read and understood what follows. If you do not want to continue, tap "Exit".',
       name: 'disclaimerDesc',
       desc: '',
       args: [],
@@ -4646,10 +4646,10 @@ class AppLocalizations {
     );
   }
 
-  /// `Helper service unavailable; TUN mode cannot be enabled. Reinstall FlClash to restore it.`
+  /// `Helper service unavailable; TUN mode cannot be enabled. Reinstall Xiaoxue to restore it.`
   String get helperCorruptTip {
     return Intl.message(
-      'Helper service unavailable; TUN mode cannot be enabled. Reinstall FlClash to restore it.',
+      'Helper service unavailable; TUN mode cannot be enabled. Reinstall Xiaoxue to restore it.',
       name: 'helperCorruptTip',
       desc: '',
       args: [],
@@ -4676,20 +4676,20 @@ class AppLocalizations {
     );
   }
 
-  /// `Windows refused to run FlClashCore.exe (error {code}). An app control policy such as Smart App Control or AppLocker blocks unsigned programs; allow FlClash in that policy or turn it off, then try again.`
+  /// `Windows refused to run FlClashCore.exe (error {code}). An app control policy such as Smart App Control or AppLocker blocks unsigned programs; allow Xiaoxue in that policy or turn it off, then try again.`
   String coreBlockedByPolicyTip(Object code) {
     return Intl.message(
-      'Windows refused to run FlClashCore.exe (error $code). An app control policy such as Smart App Control or AppLocker blocks unsigned programs; allow FlClash in that policy or turn it off, then try again.',
+      'Windows refused to run FlClashCore.exe (error $code). An app control policy such as Smart App Control or AppLocker blocks unsigned programs; allow Xiaoxue in that policy or turn it off, then try again.',
       name: 'coreBlockedByPolicyTip',
       desc: '',
       args: [code],
     );
   }
 
-  /// `Windows Smart App Control blocked FlClashCore.exe because it is not signed. Open Windows Security → App & browser control → Smart App Control settings, choose Off, then start FlClash again. Smart App Control cannot be turned back on without reinstalling Windows.`
+  /// `Windows Smart App Control blocked FlClashCore.exe because it is not signed. Open Windows Security → App & browser control → Smart App Control settings, choose Off, then start Xiaoxue again. Smart App Control cannot be turned back on without reinstalling Windows.`
   String get coreBlockedBySmartAppControlTip {
     return Intl.message(
-      'Windows Smart App Control blocked FlClashCore.exe because it is not signed. Open Windows Security → App & browser control → Smart App Control settings, choose Off, then start FlClash again. Smart App Control cannot be turned back on without reinstalling Windows.',
+      'Windows Smart App Control blocked FlClashCore.exe because it is not signed. Open Windows Security → App & browser control → Smart App Control settings, choose Off, then start Xiaoxue again. Smart App Control cannot be turned back on without reinstalling Windows.',
       name: 'coreBlockedBySmartAppControlTip',
       desc: '',
       args: [],
@@ -6694,10 +6694,10 @@ class AppLocalizations {
     );
   }
 
-  /// `FlClash ran into an error while starting and can't continue. Copy the details to report the problem. If it keeps happening, clearing the data usually lets the app start again.`
+  /// `Xiaoxue ran into an error while starting and can't continue. Copy the details to report the problem. If it keeps happening, clearing the data usually lets the app start again.`
   String get initFailedTip {
     return Intl.message(
-      'FlClash ran into an error while starting and can\'t continue. Copy the details to report the problem. If it keeps happening, clearing the data usually lets the app start again.',
+      'Xiaoxue ran into an error while starting and can\'t continue. Copy the details to report the problem. If it keeps happening, clearing the data usually lets the app start again.',
       name: 'initFailedTip',
       desc: '',
       args: [],
@@ -7663,8 +7663,7 @@ class AppLocalizations {
   String customImportDroppedSubRules(num count, Object label) {
     return Intl.plural(
       count,
-      one:
-          '1 SUB-RULE rule was dropped, since custom profiles do not support sub-rules',
+      one: '1 SUB-RULE rule was dropped, since custom profiles do not support sub-rules',
       other:
           '$label SUB-RULE rules were dropped, since custom profiles do not support sub-rules',
       name: 'customImportDroppedSubRules',
@@ -8133,10 +8132,10 @@ class AppLocalizations {
     );
   }
 
-  /// `FlClash will be able to read everything sent to the decrypted hosts, cookies and passwords included. Turn this on only for hosts you mean to rewrite.`
+  /// `Xiaoxue will be able to read everything sent to the decrypted hosts, cookies and passwords included. Turn this on only for hosts you mean to rewrite.`
   String get mitmEnableTip {
     return Intl.message(
-      'FlClash will be able to read everything sent to the decrypted hosts, cookies and passwords included. Turn this on only for hosts you mean to rewrite.',
+      'Xiaoxue will be able to read everything sent to the decrypted hosts, cookies and passwords included. Turn this on only for hosts you mean to rewrite.',
       name: 'mitmEnableTip',
       desc: '',
       args: [],
@@ -8168,10 +8167,10 @@ class AppLocalizations {
     );
   }
 
-  /// `The new certificate replaces the current one, which FlClash takes out of this device's trusted roots where it can. Every other device that trusts the current one has to install the new one.`
+  /// `The new certificate replaces the current one, which Xiaoxue takes out of this device's trusted roots where it can. Every other device that trusts the current one has to install the new one.`
   String get regenerateCertificateTip {
     return Intl.message(
-      'The new certificate replaces the current one, which FlClash takes out of this device\'s trusted roots where it can. Every other device that trusts the current one has to install the new one.',
+      'The new certificate replaces the current one, which Xiaoxue takes out of this device\'s trusted roots where it can. Every other device that trusts the current one has to install the new one.',
       name: 'regenerateCertificateTip',
       desc: '',
       args: [],
@@ -8403,10 +8402,10 @@ class AppLocalizations {
     );
   }
 
-  /// `The old certificate, {name}, is still among the system's trusted CAs. Allow FlClash root access in your root manager and regenerate, or remove the FlClash MITM CA module there and restart.`
+  /// `The old certificate, {name}, is still among the system's trusted CAs. Allow Xiaoxue root access in your root manager and regenerate, or remove the FlClash MITM CA module there and restart.`
   String mitmOldSystemCertificateLeftTip(Object name) {
     return Intl.message(
-      'The old certificate, $name, is still among the system\'s trusted CAs. Allow FlClash root access in your root manager and regenerate, or remove the FlClash MITM CA module there and restart.',
+      'The old certificate, $name, is still among the system\'s trusted CAs. Allow Xiaoxue root access in your root manager and regenerate, or remove the FlClash MITM CA module there and restart.',
       name: 'mitmOldSystemCertificateLeftTip',
       desc: '',
       args: [name],
@@ -8423,10 +8422,10 @@ class AppLocalizations {
     );
   }
 
-  /// `Add {host} to the hostname list? FlClash can then read what is sent to it, cookies and passwords included.`
+  /// `Add {host} to the hostname list? Xiaoxue can then read what is sent to it, cookies and passwords included.`
   String mitmDecryptHostTip(Object host) {
     return Intl.message(
-      'Add $host to the hostname list? FlClash can then read what is sent to it, cookies and passwords included.',
+      'Add $host to the hostname list? Xiaoxue can then read what is sent to it, cookies and passwords included.',
       name: 'mitmDecryptHostTip',
       desc: '',
       args: [host],
@@ -8943,10 +8942,10 @@ class AppLocalizations {
     );
   }
 
-  /// `FlClash closes to install the update and opens again when it is done.`
+  /// `Xiaoxue closes to install the update and opens again when it is done.`
   String get updateRestartTip {
     return Intl.message(
-      'FlClash closes to install the update and opens again when it is done.',
+      'Xiaoxue closes to install the update and opens again when it is done.',
       name: 'updateRestartTip',
       desc: '',
       args: [],
@@ -9068,6 +9067,536 @@ class AppLocalizations {
     return Intl.message(
       'These domains are resolved by Fallback directly.',
       name: 'fallbackFilterDomainDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Xiaoxue airport account`
+  String get xboardAccount {
+    return Intl.message(
+      'Xiaoxue airport account',
+      name: 'xboardAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign in`
+  String get xboardSignIn {
+    return Intl.message('Sign in', name: 'xboardSignIn', desc: '', args: []);
+  }
+
+  /// `Signs in to the Xiaoxue airport server and imports this account's subscription.`
+  String get xboardSignInTip {
+    return Intl.message(
+      'Signs in to the Xiaoxue airport server and imports this account\'s subscription.',
+      name: 'xboardSignInTip',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Refresh subscription`
+  String get xboardRefresh {
+    return Intl.message(
+      'Refresh subscription',
+      name: 'xboardRefresh',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign out`
+  String get xboardSignOut {
+    return Intl.message('Sign out', name: 'xboardSignOut', desc: '', args: []);
+  }
+
+  /// `Signed in, subscription imported`
+  String get xboardImportSuccess {
+    return Intl.message(
+      'Signed in, subscription imported',
+      name: 'xboardImportSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Subscription refreshed`
+  String get xboardRefreshSuccess {
+    return Intl.message(
+      'Subscription refreshed',
+      name: 'xboardRefreshSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wrong username or password`
+  String get xboardInvalidCredentials {
+    return Intl.message(
+      'Wrong username or password',
+      name: 'xboardInvalidCredentials',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Too many failed attempts, try again later`
+  String get xboardRateLimited {
+    return Intl.message(
+      'Too many failed attempts, try again later',
+      name: 'xboardRateLimited',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign-in expired, sign in again`
+  String get xboardSessionExpired {
+    return Intl.message(
+      'Sign-in expired, sign in again',
+      name: 'xboardSessionExpired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No usable plan: expired or out of traffic`
+  String get xboardSubscriptionUnavailable {
+    return Intl.message(
+      'No usable plan: expired or out of traffic',
+      name: 'xboardSubscriptionUnavailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cannot reach the server, check the network`
+  String get xboardNetworkError {
+    return Intl.message(
+      'Cannot reach the server, check the network',
+      name: 'xboardNetworkError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The server answered something unexpected`
+  String get xboardInvalidResponse {
+    return Intl.message(
+      'The server answered something unexpected',
+      name: 'xboardInvalidResponse',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Could not import the subscription`
+  String get xboardImportFailed {
+    return Intl.message(
+      'Could not import the subscription',
+      name: 'xboardImportFailed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Plans`
+  String get xboardPlans {
+    return Intl.message('Plans', name: 'xboardPlans', desc: '', args: []);
+  }
+
+  /// `Buy now`
+  String get xboardBuy {
+    return Intl.message('Buy now', name: 'xboardBuy', desc: '', args: []);
+  }
+
+  /// `Renew`
+  String get xboardRenew {
+    return Intl.message('Renew', name: 'xboardRenew', desc: '', args: []);
+  }
+
+  /// `Reset traffic`
+  String get xboardResetTraffic {
+    return Intl.message(
+      'Reset traffic',
+      name: 'xboardResetTraffic',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Coupon`
+  String get xboardCoupon {
+    return Intl.message('Coupon', name: 'xboardCoupon', desc: '', args: []);
+  }
+
+  /// `Monthly`
+  String get xboardPeriodMonthly {
+    return Intl.message(
+      'Monthly',
+      name: 'xboardPeriodMonthly',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Quarterly`
+  String get xboardPeriodQuarterly {
+    return Intl.message(
+      'Quarterly',
+      name: 'xboardPeriodQuarterly',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Half-yearly`
+  String get xboardPeriodHalfYearly {
+    return Intl.message(
+      'Half-yearly',
+      name: 'xboardPeriodHalfYearly',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yearly`
+  String get xboardPeriodYearly {
+    return Intl.message(
+      'Yearly',
+      name: 'xboardPeriodYearly',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Two years`
+  String get xboardPeriodTwoYearly {
+    return Intl.message(
+      'Two years',
+      name: 'xboardPeriodTwoYearly',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Three years`
+  String get xboardPeriodThreeYearly {
+    return Intl.message(
+      'Three years',
+      name: 'xboardPeriodThreeYearly',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `One-time`
+  String get xboardPeriodOnetime {
+    return Intl.message(
+      'One-time',
+      name: 'xboardPeriodOnetime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Speed limit`
+  String get xboardSpeedLimit {
+    return Intl.message(
+      'Speed limit',
+      name: 'xboardSpeedLimit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Devices`
+  String get xboardDeviceLimit {
+    return Intl.message(
+      'Devices',
+      name: 'xboardDeviceLimit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Plan details`
+  String get xboardPlanDetail {
+    return Intl.message(
+      'Plan details',
+      name: 'xboardPlanDetail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View`
+  String get xboardPlanDetailFold {
+    return Intl.message(
+      'View',
+      name: 'xboardPlanDetailFold',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unfinished order`
+  String get xboardPendingOrderTitle {
+    return Intl.message(
+      'Unfinished order',
+      name: 'xboardPendingOrderTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An order of {amount} is still unpaid. Cancel it and continue?`
+  String xboardPendingOrderTip(String amount) {
+    return Intl.message(
+      'An order of $amount is still unpaid. Cancel it and continue?',
+      name: 'xboardPendingOrderTip',
+      desc: 'Asks whether to cancel the unpaid order before buying again.',
+      args: [amount],
+    );
+  }
+
+  /// `Cancel and continue`
+  String get xboardCancelPendingOrder {
+    return Intl.message(
+      'Cancel and continue',
+      name: 'xboardCancelPendingOrder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Could not place the order, try again later`
+  String get xboardPurchaseFailed {
+    return Intl.message(
+      'Could not place the order, try again later',
+      name: 'xboardPurchaseFailed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Paid, subscription updated`
+  String get xboardPurchaseSuccess {
+    return Intl.message(
+      'Paid, subscription updated',
+      name: 'xboardPurchaseSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pay`
+  String get xboardPay {
+    return Intl.message('Pay', name: 'xboardPay', desc: '', args: []);
+  }
+
+  /// `Check again`
+  String get xboardCheckAgain {
+    return Intl.message(
+      'Check again',
+      name: 'xboardCheckAgain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Amount`
+  String get xboardAmount {
+    return Intl.message('Amount', name: 'xboardAmount', desc: '', args: []);
+  }
+
+  /// `Payment`
+  String get xboardPayMethod {
+    return Intl.message('Payment', name: 'xboardPayMethod', desc: '', args: []);
+  }
+
+  /// `Order`
+  String get xboardOrderNo {
+    return Intl.message('Order', name: 'xboardOrderNo', desc: '', args: []);
+  }
+
+  /// `Scan the code with WeChat. This page refreshes itself once paid.`
+  String get xboardScanTip {
+    return Intl.message(
+      'Scan the code with WeChat. This page refreshes itself once paid.',
+      name: 'xboardScanTip',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Open in browser`
+  String get xboardOpenInBrowser {
+    return Intl.message(
+      'Open in browser',
+      name: 'xboardOpenInBrowser',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel order`
+  String get xboardCancelOrder {
+    return Intl.message(
+      'Cancel order',
+      name: 'xboardCancelOrder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Could not cancel the order`
+  String get xboardCancelOrderFailed {
+    return Intl.message(
+      'Could not cancel the order',
+      name: 'xboardCancelOrderFailed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No payment seen yet, check again later`
+  String get xboardPaymentTimeout {
+    return Intl.message(
+      'No payment seen yet, check again later',
+      name: 'xboardPaymentTimeout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The server refused the request`
+  String get xboardRequestRejected {
+    return Intl.message(
+      'The server refused the request',
+      name: 'xboardRequestRejected',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Register`
+  String get xboardRegister {
+    return Intl.message('Register', name: 'xboardRegister', desc: '', args: []);
+  }
+
+  /// `Registering creates an airport account; the password needs 8 characters.`
+  String get xboardRegisterTip {
+    return Intl.message(
+      'Registering creates an airport account; the password needs 8 characters.',
+      name: 'xboardRegisterTip',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Already have an account? Sign in`
+  String get xboardHasAccount {
+    return Intl.message(
+      'Already have an account? Sign in',
+      name: 'xboardHasAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No account? Register`
+  String get xboardNoAccount {
+    return Intl.message(
+      'No account? Register',
+      name: 'xboardNoAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Subscription`
+  String get xboardSubscription {
+    return Intl.message(
+      'Subscription',
+      name: 'xboardSubscription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No subscription yet, buy a plan first`
+  String get xboardNoSubscription {
+    return Intl.message(
+      'No subscription yet, buy a plan first',
+      name: 'xboardNoSubscription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Buy / renew`
+  String get xboardBuyOrRenew {
+    return Intl.message(
+      'Buy / renew',
+      name: 'xboardBuyOrRenew',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Buy subscription`
+  String get xboardBuySubscription {
+    return Intl.message(
+      'Buy subscription',
+      name: 'xboardBuySubscription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm password`
+  String get xboardConfirmPassword {
+    return Intl.message(
+      'Confirm password',
+      name: 'xboardConfirmPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The two passwords do not match`
+  String get xboardPasswordMismatch {
+    return Intl.message(
+      'The two passwords do not match',
+      name: 'xboardPasswordMismatch',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pay now`
+  String get xboardPayNow {
+    return Intl.message('Pay now', name: 'xboardPayNow', desc: '', args: []);
+  }
+
+  /// `The payment code lives on the gateway page. Tap “Pay now” to open it; this page refreshes once paid.`
+  String get xboardPayTip {
+    return Intl.message(
+      'The payment code lives on the gateway page. Tap “Pay now” to open it; this page refreshes once paid.',
+      name: 'xboardPayTip',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Xiaoxue Telegram`
+  String get xboardTelegram {
+    return Intl.message(
+      'Xiaoxue Telegram',
+      name: 'xboardTelegram',
       desc: '',
       args: [],
     );

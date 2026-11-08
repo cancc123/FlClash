@@ -1142,7 +1142,7 @@ Map<Object?, Object?> _rawSniff(Map<String, dynamic> raw) {
 abstract class Tun with _$Tun {
   const factory Tun({
     @Default(false) bool enable,
-    @Default(appName) String device,
+    @Default(appCodename) String device,
     @Default(TunStack.mips) TunStack stack,
     @JsonKey(name: 'route-address') @Default([]) List<String> routeAddress,
     @JsonKey(fromJson: _mtuFromJson) @Default(defaultTunMtu) int mtu,

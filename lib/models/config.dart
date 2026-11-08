@@ -480,7 +480,7 @@ abstract class ThemeProps with _$ThemeProps {
     ColorStyle colorStyle,
     @Default(false) bool pureBlack,
     @Default(false) bool sidebarBlur,
-    @Default(LiquidGlassMode.none)
+    @Default(LiquidGlassMode.standard)
     @JsonKey(readValue: _readLiquidGlass)
     LiquidGlassMode liquidGlass,
     @Default(TextScale()) TextScale textScale,
@@ -509,6 +509,7 @@ abstract class Config with _$Config {
     @Default(defaultAppSettingProps)
     AppSettingProps appSettingProps,
     DAVProps? davProps,
+    XboardAccount? xboardAccount,
     @Default(defaultNetworkProps) NetworkProps networkProps,
     @Default(defaultVpnProps) VpnProps vpnProps,
     @JsonKey(fromJson: ThemeProps.safeFromJson) required ThemeProps themeProps,

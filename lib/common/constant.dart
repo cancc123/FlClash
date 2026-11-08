@@ -9,7 +9,12 @@ import 'package:fl_clash/enum/enum.dart';
 import 'package:fl_clash/models/models.dart';
 import 'package:flutter/widgets.dart';
 
-const appName = 'FlClash';
+/// The name shown to the user.
+const appName = '小雪';
+
+/// The same product in ASCII, for anything that travels as a protocol token:
+/// a header value may not hold the display name.
+const appCodename = 'Xiaoxue';
 const appHelperService = 'FlClashHelperService';
 const coreManifestName = 'manifest.json';
 const browserUa =

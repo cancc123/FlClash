@@ -24,10 +24,16 @@ class AppStateManager extends ConsumerStatefulWidget {
 
 class _AppStateManagerState extends ConsumerState<AppStateManager>
     with WidgetsBindingObserver {
+  static const _syncInterval = Duration(minutes: 10);
+  Timer? _syncTimer;
+
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
+    _syncTimer = Timer.periodic(_syncInterval, (_) {
+      unawaited(ref.read(xboardActionProvider.notifier).sync());
+    });
     // A desktop build started to the tray mounts while hidden, and a paused
     // render never runs a post-frame callback.
     scheduleMicrotask(() {
@@ -72,6 +78,7 @@ class _AppStateManagerState extends ConsumerState<AppStateManager>
 
   @override
   void dispose() {
+    _syncTimer?.cancel();
     WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
@@ -89,6 +96,7 @@ class _AppStateManagerState extends ConsumerState<AppStateManager>
   Future<void> didChangeAppLifecycleState(AppLifecycleState state) async {
     _updateVisible(state);
     if (state == AppLifecycleState.resumed) {
+      unawaited(ref.read(xboardActionProvider.notifier).sync());
       unawaited(ref.read(locationPermissionsProvider.notifier).refresh());
       // A certificate removed meanwhile stops decryption before the next start.
       if (mitmFeature && ref.read(patchClashConfigProvider).mitm.enable) {

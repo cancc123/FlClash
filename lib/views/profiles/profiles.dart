@@ -7,6 +7,7 @@ import 'package:fl_clash/providers/providers.dart';
 import 'package:fl_clash/state.dart';
 import 'package:fl_clash/ui/icons/icons.dart';
 import 'package:fl_clash/views/profiles/custom/custom.dart';
+import 'package:fl_clash/views/profiles/xboard_plans.dart';
 import 'package:fl_clash/views/profiles/extend/extend.dart';
 import 'package:fl_clash/widgets/widgets.dart';
 import 'package:flutter/services.dart';
@@ -122,13 +123,25 @@ class _ProfilesViewState extends ConsumerState<ProfilesView> {
               label: appLocalizations.nullTip(appLocalizations.profiles),
               description: appLocalizations.nullProfileDesc,
               illustration: NullStatusIllustration.profile,
-              action: AddProfileMenu(
-                builder: (open) => TonalButton(
-                  size: TonalButtonSize.bar,
-                  glyph: AppGlyphs.addCircle,
-                  label: appLocalizations.addProfile,
-                  onPressed: open,
-                ),
+              action: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  AddProfileMenu(
+                    builder: (open) => TonalButton(
+                      size: TonalButtonSize.bar,
+                      glyph: AppGlyphs.addCircle,
+                      label: appLocalizations.addProfile,
+                      onPressed: open,
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  TonalButton(
+                    size: TonalButtonSize.bar,
+                    glyph: AppGlyphs.cloudDownload,
+                    label: appLocalizations.xboardBuySubscription,
+                    onPressed: () => openXboardPlans(context),
+                  ),
+                ],
               ),
             ),
             child: _ProfilesGrid(

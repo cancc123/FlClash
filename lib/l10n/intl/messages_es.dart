@@ -33,7 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m4(detail) => "No se pudieron borrar los datos: ${detail}";
 
   static String m5(code) =>
-      "Windows se negó a ejecutar FlClashCore.exe (error ${code}). Una directiva de control de aplicaciones, como Smart App Control o AppLocker, bloquea los programas sin firmar; permite FlClash en esa directiva o desactívala e inténtalo de nuevo.";
+      "Windows se negó a ejecutar FlClashCore.exe (error ${code}). Una directiva de control de aplicaciones, como Smart App Control o AppLocker, bloquea los programas sin firmar; permite Xiaoxue en esa directiva o desactívala e inténtalo de nuevo.";
 
   static String m6(name) =>
       "La app no pudo terminar de iniciarse dos veces seguidas. Para romper el ciclo, se ha deseleccionado el perfil ${name} y se ha omitido la configuración automática. Puedes volver a seleccionarlo en cualquier momento.";
@@ -163,7 +163,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Chrome y Firefox tienen sus propios almacenes de certificados, que necesitan certutil: ${command}";
 
   static String m55(host) =>
-      "¿Añadir ${host} a la lista de nombres de host? FlClash podrá leer lo que se le envíe, incluidas cookies y contraseñas.";
+      "¿Añadir ${host} a la lista de nombres de host? Xiaoxue podrá leer lo que se le envíe, incluidas cookies y contraseñas.";
 
   static String m56(host) =>
       "¿Añadir -${host} al principio de la lista de nombres de host? El host ya no se descifrará nunca.";
@@ -182,7 +182,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "No se pudo quitar el certificado antiguo, ${name}. Quítalo tú de las raíces de confianza.";
 
   static String m62(name) =>
-      "El certificado antiguo, ${name}, sigue entre los certificados de confianza del sistema. Permite el acceso root a FlClash en tu gestor de root y vuelve a generarlo, o elimina allí el módulo «FlClash MITM CA» y reinicia.";
+      "El certificado antiguo, ${name}, sigue entre los certificados de confianza del sistema. Permite el acceso root a Xiaoxue en tu gestor de root y vuelve a generarlo, o elimina allí el módulo «FlClash MITM CA» y reinicia.";
 
   static String m63(name) =>
       "Quita el certificado antiguo, ${name}, en Ajustes › Seguridad › Cifrado y credenciales › Credenciales de confianza › Usuario, y después instala el nuevo.";
@@ -276,10 +276,13 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m99(date) => "Válido hasta el ${date}";
 
-  static String m100(count) =>
-      "${Intl.plural(count, one: 'hace 1 año', other: 'hace ${count} años')}";
+  static String m100(amount) =>
+      "Un pedido de ${amount} sigue sin pagar. ¿Cancelarlo y continuar?";
 
   static String m101(count) =>
+      "${Intl.plural(count, one: 'hace 1 año', other: 'hace ${count} años')}";
+
+  static String m102(count) =>
       "${Intl.plural(count, other: 'hace ${count} a')}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -605,7 +608,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "core": MessageLookupByLibrary.simpleMessage("Núcleo"),
     "coreBlockedByPolicyTip": m5,
     "coreBlockedBySmartAppControlTip": MessageLookupByLibrary.simpleMessage(
-      "Smart App Control de Windows bloqueó FlClashCore.exe porque no está firmado. Abre Seguridad de Windows → Control de aplicaciones y navegador → Configuración de Smart App Control, elige Desactivado y vuelve a iniciar FlClash. Smart App Control no se puede volver a activar sin reinstalar Windows.",
+      "Smart App Control de Windows bloqueó FlClashCore.exe porque no está firmado. Abre Seguridad de Windows → Control de aplicaciones y navegador → Configuración de Smart App Control, elige Desactivado y vuelve a iniciar Xiaoxue. Smart App Control no se puede volver a activar sin reinstalar Windows.",
     ),
     "coreStatus": MessageLookupByLibrary.simpleMessage("Estado del núcleo"),
     "country": MessageLookupByLibrary.simpleMessage("Región"),
@@ -735,7 +738,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Cambios en esta declaración",
     ),
     "disclaimerDesc": MessageLookupByLibrary.simpleMessage(
-      "Antes de usar FlClash («el Software»), lee atentamente esta declaración y asegúrate de entenderla. Tocar «Aceptar» significa que has leído y entendido lo que sigue. Si no quieres continuar, toca «Salir».",
+      "Antes de usar Xiaoxue («el Software»), lee atentamente esta declaración y asegúrate de entenderla. Tocar «Aceptar» significa que has leído y entendido lo que sigue. Si no quieres continuar, toca «Salir».",
     ),
     "disclaimerLiabilityContent": MessageLookupByLibrary.simpleMessage(
       "En la máxima medida permitida por la ley aplicable, ni los desarrolladores ni ningún colaborador serán responsables de ningún daño directo, indirecto, incidental, especial, punitivo o emergente derivado del uso o de la imposibilidad de usar el Software, incluidos, entre otros, la pérdida de datos, los daños al dispositivo, los fallos de red, la interrupción de la actividad, el lucro cesante o cualquier disputa legal resultante, incluso si se les hubiera advertido de la posibilidad de tales daños.",
@@ -999,7 +1002,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Comprobación de estado",
     ),
     "helperCorruptTip": MessageLookupByLibrary.simpleMessage(
-      "El servicio auxiliar (Helper) no está disponible; no se puede activar el modo TUN. Reinstala FlClash para restaurarlo.",
+      "El servicio auxiliar (Helper) no está disponible; no se puede activar el modo TUN. Reinstala Xiaoxue para restaurarlo.",
     ),
     "hex": MessageLookupByLibrary.simpleMessage("Hex"),
     "hideFromList": MessageLookupByLibrary.simpleMessage("Ocultar de la lista"),
@@ -1109,7 +1112,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "init": MessageLookupByLibrary.simpleMessage("Inicio"),
     "initFailed": MessageLookupByLibrary.simpleMessage("Error al iniciar"),
     "initFailedTip": MessageLookupByLibrary.simpleMessage(
-      "FlClash encontró un error al iniciarse y no puede continuar. Copia los detalles para informar del problema. Si sigue ocurriendo, borrar los datos suele permitir que la app vuelva a iniciarse.",
+      "Xiaoxue encontró un error al iniciarse y no puede continuar. Copia los detalles para informar del problema. Si sigue ocurriendo, borrar los datos suele permitir que la app vuelva a iniciarse.",
     ),
     "initiator": MessageLookupByLibrary.simpleMessage("Origen de la solicitud"),
     "initiatorShort": MessageLookupByLibrary.simpleMessage("De"),
@@ -1125,9 +1128,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "installCertificateSuccess": MessageLookupByLibrary.simpleMessage(
       "Certificado instalado",
     ),
-    "installedAppsPermissionDeniedMessage": MessageLookupByLibrary.simpleMessage(
-      "Se denegó el permiso de lista de apps, por lo que no se pueden mostrar las apps instaladas. Concédelo manualmente en los ajustes del sistema.",
-    ),
+    "installedAppsPermissionDeniedMessage":
+        MessageLookupByLibrary.simpleMessage(
+          "Se denegó el permiso de lista de apps, por lo que no se pueden mostrar las apps instaladas. Concédelo manualmente en los ajustes del sistema.",
+        ),
     "installedAppsPermissionDesc": MessageLookupByLibrary.simpleMessage(
       "Este sistema oculta la lista de apps instaladas hasta que se concede el permiso. Autorízalo para configurar el proxy por app.",
     ),
@@ -1393,7 +1397,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "mitmDecryptHostTip": m55,
     "mitmEnableTip": MessageLookupByLibrary.simpleMessage(
-      "FlClash podrá leer todo lo que se envíe a los hosts descifrados, incluidas cookies y contraseñas. Actívalo solo para los hosts que quieras reescribir.",
+      "Xiaoxue podrá leer todo lo que se envíe a los hosts descifrados, incluidas cookies y contraseñas. Actívalo solo para los hosts que quieras reescribir.",
     ),
     "mitmExcludeHost": MessageLookupByLibrary.simpleMessage(
       "Excluir del descifrado",
@@ -1755,7 +1759,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Regenerar certificado",
     ),
     "regenerateCertificateTip": MessageLookupByLibrary.simpleMessage(
-      "El nuevo certificado sustituye al actual, que FlClash quita de las raíces de confianza de este dispositivo cuando puede. Cada otro dispositivo que confía en el actual tiene que instalar el nuevo.",
+      "El nuevo certificado sustituye al actual, que Xiaoxue quita de las raíces de confianza de este dispositivo cuando puede. Cada otro dispositivo que confía en el actual tiene que instalar el nuevo.",
     ),
     "regex": MessageLookupByLibrary.simpleMessage("Expresión regular"),
     "releaseMemory": MessageLookupByLibrary.simpleMessage("Liberar memoria"),
@@ -2044,10 +2048,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Enviado. Confirma la importación en el otro dispositivo.",
     ),
     "sendFromPhonePageTitle": MessageLookupByLibrary.simpleMessage(
-      "Enviar un enlace a FlClash",
+      "Enviar un enlace a Xiaoxue",
     ),
     "sendFromPhonePermissionDenied": MessageLookupByLibrary.simpleMessage(
-      "Para recibir un enlace desde el teléfono, FlClash necesita el permiso Dispositivos cercanos, que le da acceso a la red local. Actívalo en los ajustes de la aplicación.",
+      "Para recibir un enlace desde el teléfono, Xiaoxue necesita el permiso Dispositivos cercanos, que le da acceso a la red local. Actívalo en los ajustes de la aplicación.",
     ),
     "sendFromPhoneTip": MessageLookupByLibrary.simpleMessage(
       "Escanea el código con la cámara del teléfono y pega el enlace en la página que se abre. Ambos dispositivos deben estar en la misma red.",
@@ -2095,7 +2099,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "No se pudo leer ningún proxy de los enlaces",
     ),
     "shareQrcodeTip": MessageLookupByLibrary.simpleMessage(
-      "Escanea con FlClash en otro dispositivo para importar este perfil.",
+      "Escanea con Xiaoxue en otro dispositivo para importar este perfil.",
     ),
     "show": MessageLookupByLibrary.simpleMessage("Mostrar"),
     "showLess": MessageLookupByLibrary.simpleMessage("Contraer"),
@@ -2271,7 +2275,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "No se pudo descargar la actualización.",
     ),
     "updateDownloadStarted": MessageLookupByLibrary.simpleMessage(
-      "Se inició la descarga de la actualización. Consulta el progreso en el panel.",
+      "Se inició la descarga de la actualización. Consulta el progreso en el servidor.",
     ),
     "updateDownloadTest": MessageLookupByLibrary.simpleMessage(
       "Prueba de descarga de actualización",
@@ -2288,7 +2292,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "La actualización se descargó. Toca para instalarla.",
     ),
     "updateRestartTip": MessageLookupByLibrary.simpleMessage(
-      "FlClash se cerrará para instalar la actualización y se volverá a abrir al terminar.",
+      "Xiaoxue se cerrará para instalar la actualización y se volverá a abrir al terminar.",
     ),
     "upload": MessageLookupByLibrary.simpleMessage("Subida"),
     "uploadBandwidth": MessageLookupByLibrary.simpleMessage(
@@ -2324,8 +2328,137 @@ class MessageLookup extends MessageLookupByLibrary {
     "writeToSystemDesc": MessageLookupByLibrary.simpleMessage(
       "Escribir en el sistema también ajusta el reloj del sistema; Android lo ignora.",
     ),
-    "yearsAgo": m100,
-    "yearsAgoShort": m101,
+    "xboardAccount": MessageLookupByLibrary.simpleMessage("cuenta Xiaoxue"),
+    "xboardAmount": MessageLookupByLibrary.simpleMessage("Importe"),
+    "xboardBuy": MessageLookupByLibrary.simpleMessage("Comprar"),
+    "xboardBuyOrRenew": MessageLookupByLibrary.simpleMessage(
+      "Comprar / renovar",
+    ),
+    "xboardBuySubscription": MessageLookupByLibrary.simpleMessage(
+      "Comprar suscripción",
+    ),
+    "xboardCancelOrder": MessageLookupByLibrary.simpleMessage(
+      "Cancelar pedido",
+    ),
+    "xboardCancelOrderFailed": MessageLookupByLibrary.simpleMessage(
+      "No se pudo cancelar el pedido",
+    ),
+    "xboardCancelPendingOrder": MessageLookupByLibrary.simpleMessage(
+      "Cancelar y continuar",
+    ),
+    "xboardCheckAgain": MessageLookupByLibrary.simpleMessage(
+      "Comprobar de nuevo",
+    ),
+    "xboardConfirmPassword": MessageLookupByLibrary.simpleMessage(
+      "Confirmar contraseña",
+    ),
+    "xboardCoupon": MessageLookupByLibrary.simpleMessage("Cupón"),
+    "xboardDeviceLimit": MessageLookupByLibrary.simpleMessage("Dispositivos"),
+    "xboardHasAccount": MessageLookupByLibrary.simpleMessage(
+      "¿Ya tienes cuenta? Iniciar sesión",
+    ),
+    "xboardImportFailed": MessageLookupByLibrary.simpleMessage(
+      "No se pudo importar la suscripción",
+    ),
+    "xboardImportSuccess": MessageLookupByLibrary.simpleMessage(
+      "Sesión iniciada, suscripción importada",
+    ),
+    "xboardInvalidCredentials": MessageLookupByLibrary.simpleMessage(
+      "Usuario o contraseña incorrectos",
+    ),
+    "xboardInvalidResponse": MessageLookupByLibrary.simpleMessage(
+      "El servidor devolvió una respuesta inesperada",
+    ),
+    "xboardNetworkError": MessageLookupByLibrary.simpleMessage(
+      "No se puede conectar con el servidor, revisa la red",
+    ),
+    "xboardNoAccount": MessageLookupByLibrary.simpleMessage(
+      "¿Sin cuenta? Regístrate",
+    ),
+    "xboardNoSubscription": MessageLookupByLibrary.simpleMessage(
+      "Sin suscripción, compra un plan primero",
+    ),
+    "xboardOpenInBrowser": MessageLookupByLibrary.simpleMessage(
+      "Abrir en el navegador",
+    ),
+    "xboardOrderNo": MessageLookupByLibrary.simpleMessage("Pedido"),
+    "xboardPasswordMismatch": MessageLookupByLibrary.simpleMessage(
+      "Las contraseñas no coinciden",
+    ),
+    "xboardPay": MessageLookupByLibrary.simpleMessage("Pagar"),
+    "xboardPayMethod": MessageLookupByLibrary.simpleMessage("Pago"),
+    "xboardPayNow": MessageLookupByLibrary.simpleMessage("Pagar ahora"),
+    "xboardPayTip": MessageLookupByLibrary.simpleMessage(
+      "El código QR de pago está en la página de pago. Pulsa «Pagar ahora» para abrirla.",
+    ),
+    "xboardPaymentTimeout": MessageLookupByLibrary.simpleMessage(
+      "Aún no hay pago, comprueba más tarde",
+    ),
+    "xboardPendingOrderTip": m100,
+    "xboardPendingOrderTitle": MessageLookupByLibrary.simpleMessage(
+      "Pedido sin terminar",
+    ),
+    "xboardPeriodHalfYearly": MessageLookupByLibrary.simpleMessage("Semestral"),
+    "xboardPeriodMonthly": MessageLookupByLibrary.simpleMessage("Mensual"),
+    "xboardPeriodOnetime": MessageLookupByLibrary.simpleMessage("Único"),
+    "xboardPeriodQuarterly": MessageLookupByLibrary.simpleMessage("Trimestral"),
+    "xboardPeriodThreeYearly": MessageLookupByLibrary.simpleMessage(
+      "Tres años",
+    ),
+    "xboardPeriodTwoYearly": MessageLookupByLibrary.simpleMessage("Dos años"),
+    "xboardPeriodYearly": MessageLookupByLibrary.simpleMessage("Anual"),
+    "xboardPlanDetail": MessageLookupByLibrary.simpleMessage(
+      "Detalles del plan",
+    ),
+    "xboardPlanDetailFold": MessageLookupByLibrary.simpleMessage("Ver"),
+    "xboardPlans": MessageLookupByLibrary.simpleMessage("Planes"),
+    "xboardPurchaseFailed": MessageLookupByLibrary.simpleMessage(
+      "No se pudo crear el pedido, inténtalo más tarde",
+    ),
+    "xboardPurchaseSuccess": MessageLookupByLibrary.simpleMessage(
+      "Pagado, suscripción actualizada",
+    ),
+    "xboardRateLimited": MessageLookupByLibrary.simpleMessage(
+      "Demasiados intentos fallidos, inténtalo más tarde",
+    ),
+    "xboardRefresh": MessageLookupByLibrary.simpleMessage(
+      "Actualizar suscripción",
+    ),
+    "xboardRefreshSuccess": MessageLookupByLibrary.simpleMessage(
+      "Suscripción actualizada",
+    ),
+    "xboardRegister": MessageLookupByLibrary.simpleMessage("Registrarse"),
+    "xboardRegisterTip": MessageLookupByLibrary.simpleMessage(
+      "Registrarse crea una cuenta; la contraseña necesita 8 caracteres.",
+    ),
+    "xboardRenew": MessageLookupByLibrary.simpleMessage("Renovar"),
+    "xboardRequestRejected": MessageLookupByLibrary.simpleMessage(
+      "El servidor rechazó la solicitud",
+    ),
+    "xboardResetTraffic": MessageLookupByLibrary.simpleMessage(
+      "Reiniciar tráfico",
+    ),
+    "xboardScanTip": MessageLookupByLibrary.simpleMessage(
+      "Escanea el código con WeChat. La página se actualiza al pagar.",
+    ),
+    "xboardSessionExpired": MessageLookupByLibrary.simpleMessage(
+      "La sesión ha caducado, vuelve a iniciar sesión",
+    ),
+    "xboardSignIn": MessageLookupByLibrary.simpleMessage("Iniciar sesión"),
+    "xboardSignInTip": MessageLookupByLibrary.simpleMessage(
+      "Inicia sesión en el servidor Xiaoxue e importa la suscripción de esta cuenta.",
+    ),
+    "xboardSignOut": MessageLookupByLibrary.simpleMessage("Cerrar sesión"),
+    "xboardSpeedLimit": MessageLookupByLibrary.simpleMessage(
+      "Límite de velocidad",
+    ),
+    "xboardSubscription": MessageLookupByLibrary.simpleMessage("Suscripción"),
+    "xboardSubscriptionUnavailable": MessageLookupByLibrary.simpleMessage(
+      "Sin plan utilizable: caducado o sin tráfico",
+    ),
+    "xboardTelegram": MessageLookupByLibrary.simpleMessage("Telegram Xiaoxue"),
+    "yearsAgo": m101,
+    "yearsAgoShort": m102,
     "yes": MessageLookupByLibrary.simpleMessage("Sí"),
     "zhCN": MessageLookupByLibrary.simpleMessage("Chino simplificado"),
   };

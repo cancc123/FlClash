@@ -384,7 +384,7 @@ _ThemeProps _$ThemePropsFromJson(Map<String, dynamic> json) => _ThemeProps(
         _$LiquidGlassModeEnumMap,
         _readLiquidGlass(json, 'liquidGlass'),
       ) ??
-      LiquidGlassMode.none,
+      LiquidGlassMode.standard,
   textScale: json['textScale'] == null
       ? const TextScale()
       : TextScale.fromJson(json['textScale'] as Map<String, dynamic>),
@@ -438,6 +438,9 @@ _Config _$ConfigFromJson(Map<String, dynamic> json) => _Config(
   davProps: json['davProps'] == null
       ? null
       : DAVProps.fromJson(json['davProps'] as Map<String, dynamic>),
+  xboardAccount: json['xboardAccount'] == null
+      ? null
+      : XboardAccount.fromJson(json['xboardAccount'] as Map<String, dynamic>),
   networkProps: json['networkProps'] == null
       ? defaultNetworkProps
       : NetworkProps.fromJson(json['networkProps'] as Map<String, dynamic>?),
@@ -472,6 +475,7 @@ Map<String, dynamic> _$ConfigToJson(_Config instance) => <String, dynamic>{
   'hotKeyActions': instance.hotKeyActions,
   'appSettingProps': instance.appSettingProps,
   'davProps': instance.davProps,
+  'xboardAccount': instance.xboardAccount,
   'networkProps': instance.networkProps,
   'vpnProps': instance.vpnProps,
   'themeProps': instance.themeProps,

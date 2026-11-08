@@ -31,7 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m4(detail) => "データを消去できませんでした：${detail}";
 
   static String m5(code) =>
-      "Windows が FlClashCore.exe の実行を拒否しました（エラー ${code}）。スマート アプリ コントロールや AppLocker などのアプリ制御ポリシーは未署名のプログラムをブロックします。ポリシーで FlClash を許可するか、ポリシーを無効にしてから再試行してください。";
+      "Windows が FlClashCore.exe の実行を拒否しました（エラー ${code}）。スマート アプリ コントロールや AppLocker などのアプリ制御ポリシーは未署名のプログラムをブロックします。ポリシーで Xiaoxue を許可するか、ポリシーを無効にしてから再試行してください。";
 
   static String m6(name) =>
       "アプリの起動が2回連続で完了しませんでした。クラッシュループを断ち切るため、プロファイル ${name} の選択を解除し、今回の自動セットアップをスキップしました。いつでも選択し直せます。";
@@ -140,7 +140,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Chrome と Firefox は独自の証明書ストアを使うため、certutil が必要です：${command}";
 
   static String m55(host) =>
-      "${host} をホスト名リストに追加しますか？FlClash は Cookie やパスワードを含め、このホストに送られる内容を読み取れるようになります。";
+      "${host} をホスト名リストに追加しますか？Xiaoxue は Cookie やパスワードを含め、このホストに送られる内容を読み取れるようになります。";
 
   static String m56(host) => "ホスト名リストの先頭に -${host} を追加しますか？以後このホストは復号されません。";
 
@@ -156,7 +156,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m61(name) => "古い証明書 ${name} を削除できませんでした。信頼されたルートから手動で削除してください。";
 
   static String m62(name) =>
-      "古い証明書 ${name} はシステムの信頼された証明書に残っています。root マネージャーで FlClash に root を許可してから再生成するか、そこで「FlClash MITM CA」モジュールを削除して再起動してください。";
+      "古い証明書 ${name} はシステムの信頼された証明書に残っています。root マネージャーで Xiaoxue に root を許可してから再生成するか、そこで「FlClash MITM CA」モジュールを削除して再起動してください。";
 
   static String m63(name) =>
       "設定の「セキュリティ › 暗号化と認証情報 › 信頼できる認証情報 › ユーザー」で古い証明書 ${name} を削除してから、新しい証明書をインストールしてください。";
@@ -242,9 +242,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m99(date) => "有効期限 ${date}";
 
-  static String m100(count) => "${count} 年前";
+  static String m100(amount) => "${amount} の注文が未払いです。キャンセルして続けますか？";
 
   static String m101(count) => "${count} 年前";
+
+  static String m102(count) => "${count} 年前";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -475,7 +477,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "core": MessageLookupByLibrary.simpleMessage("コア"),
     "coreBlockedByPolicyTip": m5,
     "coreBlockedBySmartAppControlTip": MessageLookupByLibrary.simpleMessage(
-      "Windows のスマート アプリ コントロールが、署名されていない FlClashCore.exe をブロックしました。Windows セキュリティ → アプリとブラウザーの制御 → スマート アプリ コントロールの設定で「オフ」を選び、FlClash を再起動してください。一度オフにすると、Windows を再インストールしない限り再度オンにはできません。",
+      "Windows のスマート アプリ コントロールが、署名されていない FlClashCore.exe をブロックしました。Windows セキュリティ → アプリとブラウザーの制御 → スマート アプリ コントロールの設定で「オフ」を選び、Xiaoxue を再起動してください。一度オフにすると、Windows を再インストールしない限り再度オンにはできません。",
     ),
     "coreStatus": MessageLookupByLibrary.simpleMessage("コアの状態"),
     "country": MessageLookupByLibrary.simpleMessage("地域"),
@@ -585,7 +587,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "disclaimerChangesTitle": MessageLookupByLibrary.simpleMessage("本声明の変更"),
     "disclaimerDesc": MessageLookupByLibrary.simpleMessage(
-      "FlClash（以下「本ソフトウェア」）を使用する前に、本声明をよくお読みのうえ十分に理解してください。「同意する」をタップすると、以下の内容を読み理解したことになります。続行しない場合は「終了」をタップしてください。",
+      "Xiaoxue（以下「本ソフトウェア」）を使用する前に、本声明をよくお読みのうえ十分に理解してください。「同意する」をタップすると、以下の内容を読み理解したことになります。続行しない場合は「終了」をタップしてください。",
     ),
     "disclaimerLiabilityContent": MessageLookupByLibrary.simpleMessage(
       "適用法で認められる最大限の範囲において、開発者およびすべての貢献者は、本ソフトウェアの使用または使用不能に起因する直接的、間接的、偶発的、特別、懲罰的または結果的な損害（データの消失、機器の損傷、ネットワーク障害、業務の中断、逸失利益、およびそれに起因する法的紛争を含むがこれらに限らない）について、その可能性を知らされていた場合であっても、一切責任を負いません。",
@@ -785,7 +787,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "headerRewrite": MessageLookupByLibrary.simpleMessage("ヘッダー書き換え"),
     "healthCheck": MessageLookupByLibrary.simpleMessage("ヘルスチェック"),
     "helperCorruptTip": MessageLookupByLibrary.simpleMessage(
-      "Helper サービスが利用できないため、TUN モードを有効にできません。FlClash を再インストールしてください。",
+      "Helper サービスが利用できないため、TUN モードを有効にできません。Xiaoxue を再インストールしてください。",
     ),
     "hex": MessageLookupByLibrary.simpleMessage("16進数"),
     "hideFromList": MessageLookupByLibrary.simpleMessage("リストから隠す"),
@@ -881,7 +883,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "init": MessageLookupByLibrary.simpleMessage("初期化"),
     "initFailed": MessageLookupByLibrary.simpleMessage("起動に失敗しました"),
     "initFailedTip": MessageLookupByLibrary.simpleMessage(
-      "FlClash の起動中にエラーが発生したため、続行できません。詳細をコピーして問題を報告できます。繰り返し発生する場合は、データを消去すると起動できるようになることがあります。",
+      "Xiaoxue の起動中にエラーが発生したため、続行できません。詳細をコピーして問題を報告できます。繰り返し発生する場合は、データを消去すると起動できるようになることがあります。",
     ),
     "initiator": MessageLookupByLibrary.simpleMessage("発信元"),
     "initiatorShort": MessageLookupByLibrary.simpleMessage("発信元"),
@@ -1106,7 +1108,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "mitmDecryptHost": MessageLookupByLibrary.simpleMessage("このホストを復号"),
     "mitmDecryptHostTip": m55,
     "mitmEnableTip": MessageLookupByLibrary.simpleMessage(
-      "オンにすると、FlClash は復号するホストに送られるすべての内容（Cookie やパスワードを含む）を読み取れます。書き換えが必要なホストに限ってオンにしてください。",
+      "オンにすると、Xiaoxue は復号するホストに送られるすべての内容（Cookie やパスワードを含む）を読み取れます。書き換えが必要なホストに限ってオンにしてください。",
     ),
     "mitmExcludeHost": MessageLookupByLibrary.simpleMessage("復号から除外"),
     "mitmExcludeHostTip": m56,
@@ -1394,7 +1396,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "redo": MessageLookupByLibrary.simpleMessage("やり直す"),
     "regenerateCertificate": MessageLookupByLibrary.simpleMessage("証明書を再生成"),
     "regenerateCertificateTip": MessageLookupByLibrary.simpleMessage(
-      "新しい証明書が現在の証明書を置き換えます。FlClash は可能な場合、現在の証明書をこのデバイスの信頼されたルートから削除します。現在の証明書を信頼している他のデバイスには、新しい証明書をインストールする必要があります。",
+      "新しい証明書が現在の証明書を置き換えます。Xiaoxue は可能な場合、現在の証明書をこのデバイスの信頼されたルートから削除します。現在の証明書を信頼している他のデバイスには、新しい証明書をインストールする必要があります。",
     ),
     "regex": MessageLookupByLibrary.simpleMessage("正規表現"),
     "releaseMemory": MessageLookupByLibrary.simpleMessage("メモリを解放"),
@@ -1623,10 +1625,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "送信しました。もう一方のデバイスでインポートを確認してください。",
     ),
     "sendFromPhonePageTitle": MessageLookupByLibrary.simpleMessage(
-      "FlClash にリンクを送信",
+      "Xiaoxue にリンクを送信",
     ),
     "sendFromPhonePermissionDenied": MessageLookupByLibrary.simpleMessage(
-      "スマートフォンからリンクを受け取るには、FlClash がローカルネットワークにアクセスするための「付近のデバイス」権限が必要です。アプリの設定でオンにしてください。",
+      "スマートフォンからリンクを受け取るには、Xiaoxue がローカルネットワークにアクセスするための「付近のデバイス」権限が必要です。アプリの設定でオンにしてください。",
     ),
     "sendFromPhoneTip": MessageLookupByLibrary.simpleMessage(
       "スマートフォンのカメラでコードをスキャンし、開いたページにリンクを貼り付けてください。両方のデバイスを同じネットワークに接続する必要があります。",
@@ -1660,7 +1662,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "リンクからプロキシを読み取れませんでした",
     ),
     "shareQrcodeTip": MessageLookupByLibrary.simpleMessage(
-      "別のデバイスの FlClash でスキャンすると、このプロファイルをインポートできます。",
+      "別のデバイスの Xiaoxue でスキャンすると、このプロファイルをインポートできます。",
     ),
     "show": MessageLookupByLibrary.simpleMessage("表示"),
     "showLess": MessageLookupByLibrary.simpleMessage("折りたたむ"),
@@ -1819,7 +1821,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "アップデートをダウンロードしました。タップしてインストールします。",
     ),
     "updateRestartTip": MessageLookupByLibrary.simpleMessage(
-      "更新をインストールするため FlClash を終了し、完了後に再び起動します。",
+      "更新をインストールするため Xiaoxue を終了し、完了後に再び起動します。",
     ),
     "upload": MessageLookupByLibrary.simpleMessage("アップロード"),
     "uploadBandwidth": MessageLookupByLibrary.simpleMessage("アップロード帯域幅"),
@@ -1847,8 +1849,109 @@ class MessageLookup extends MessageLookupByLibrary {
     "writeToSystemDesc": MessageLookupByLibrary.simpleMessage(
       "システムに書き込むを有効にするとシステムクロックも設定します。Android では無視されます。",
     ),
-    "yearsAgo": m100,
-    "yearsAgoShort": m101,
+    "xboardAccount": MessageLookupByLibrary.simpleMessage("小雪空港アカウント"),
+    "xboardAmount": MessageLookupByLibrary.simpleMessage("金額"),
+    "xboardBuy": MessageLookupByLibrary.simpleMessage("購入する"),
+    "xboardBuyOrRenew": MessageLookupByLibrary.simpleMessage("購入 / 更新"),
+    "xboardBuySubscription": MessageLookupByLibrary.simpleMessage("購読を購入"),
+    "xboardCancelOrder": MessageLookupByLibrary.simpleMessage("注文をキャンセル"),
+    "xboardCancelOrderFailed": MessageLookupByLibrary.simpleMessage(
+      "注文をキャンセルできませんでした",
+    ),
+    "xboardCancelPendingOrder": MessageLookupByLibrary.simpleMessage(
+      "キャンセルして続行",
+    ),
+    "xboardCheckAgain": MessageLookupByLibrary.simpleMessage("再確認"),
+    "xboardConfirmPassword": MessageLookupByLibrary.simpleMessage("パスワードの確認"),
+    "xboardCoupon": MessageLookupByLibrary.simpleMessage("クーポン"),
+    "xboardDeviceLimit": MessageLookupByLibrary.simpleMessage("端末数"),
+    "xboardHasAccount": MessageLookupByLibrary.simpleMessage(
+      "アカウントをお持ちですか？ログイン",
+    ),
+    "xboardImportFailed": MessageLookupByLibrary.simpleMessage(
+      "購読をインポートできませんでした",
+    ),
+    "xboardImportSuccess": MessageLookupByLibrary.simpleMessage(
+      "ログインしました。購読をインポートしました",
+    ),
+    "xboardInvalidCredentials": MessageLookupByLibrary.simpleMessage(
+      "ユーザー名またはパスワードが違います",
+    ),
+    "xboardInvalidResponse": MessageLookupByLibrary.simpleMessage(
+      "サーバーから予期しない応答がありました",
+    ),
+    "xboardNetworkError": MessageLookupByLibrary.simpleMessage(
+      "サーバーに接続できません。ネットワークを確認してください",
+    ),
+    "xboardNoAccount": MessageLookupByLibrary.simpleMessage("アカウントがない場合は登録"),
+    "xboardNoSubscription": MessageLookupByLibrary.simpleMessage(
+      "購読がありません。先にプランを購入してください",
+    ),
+    "xboardOpenInBrowser": MessageLookupByLibrary.simpleMessage("ブラウザで開く"),
+    "xboardOrderNo": MessageLookupByLibrary.simpleMessage("注文番号"),
+    "xboardPasswordMismatch": MessageLookupByLibrary.simpleMessage(
+      "パスワードが一致しません",
+    ),
+    "xboardPay": MessageLookupByLibrary.simpleMessage("支払い"),
+    "xboardPayMethod": MessageLookupByLibrary.simpleMessage("支払い方法"),
+    "xboardPayNow": MessageLookupByLibrary.simpleMessage("支払いへ"),
+    "xboardPayTip": MessageLookupByLibrary.simpleMessage(
+      "支払い用の QR コードは決済ページ内にあります。「支払いへ」を押して開いてください。",
+    ),
+    "xboardPaymentTimeout": MessageLookupByLibrary.simpleMessage(
+      "支払いを確認できません。後で再確認してください",
+    ),
+    "xboardPendingOrderTip": m100,
+    "xboardPendingOrderTitle": MessageLookupByLibrary.simpleMessage("未完了の注文"),
+    "xboardPeriodHalfYearly": MessageLookupByLibrary.simpleMessage("半年"),
+    "xboardPeriodMonthly": MessageLookupByLibrary.simpleMessage("月払い"),
+    "xboardPeriodOnetime": MessageLookupByLibrary.simpleMessage("一回払い"),
+    "xboardPeriodQuarterly": MessageLookupByLibrary.simpleMessage("四半期"),
+    "xboardPeriodThreeYearly": MessageLookupByLibrary.simpleMessage("3年"),
+    "xboardPeriodTwoYearly": MessageLookupByLibrary.simpleMessage("2年"),
+    "xboardPeriodYearly": MessageLookupByLibrary.simpleMessage("年払い"),
+    "xboardPlanDetail": MessageLookupByLibrary.simpleMessage("プラン詳細"),
+    "xboardPlanDetailFold": MessageLookupByLibrary.simpleMessage("見る"),
+    "xboardPlans": MessageLookupByLibrary.simpleMessage("プラン"),
+    "xboardPurchaseFailed": MessageLookupByLibrary.simpleMessage(
+      "注文できませんでした。後でもう一度お試しください",
+    ),
+    "xboardPurchaseSuccess": MessageLookupByLibrary.simpleMessage(
+      "支払いが完了し、購読を更新しました",
+    ),
+    "xboardRateLimited": MessageLookupByLibrary.simpleMessage(
+      "パスワードの誤りが多すぎます。しばらくしてからお試しください",
+    ),
+    "xboardRefresh": MessageLookupByLibrary.simpleMessage("購読を更新"),
+    "xboardRefreshSuccess": MessageLookupByLibrary.simpleMessage("購読を更新しました"),
+    "xboardRegister": MessageLookupByLibrary.simpleMessage("登録"),
+    "xboardRegisterTip": MessageLookupByLibrary.simpleMessage(
+      "登録すると空港アカウントが作成されます。パスワードは8文字以上です。",
+    ),
+    "xboardRenew": MessageLookupByLibrary.simpleMessage("更新"),
+    "xboardRequestRejected": MessageLookupByLibrary.simpleMessage(
+      "サーバーに拒否されました",
+    ),
+    "xboardResetTraffic": MessageLookupByLibrary.simpleMessage("通信量をリセット"),
+    "xboardScanTip": MessageLookupByLibrary.simpleMessage(
+      "WeChat でコードを読み取ってください。支払い後に自動更新されます。",
+    ),
+    "xboardSessionExpired": MessageLookupByLibrary.simpleMessage(
+      "ログインの有効期限が切れました。再度ログインしてください",
+    ),
+    "xboardSignIn": MessageLookupByLibrary.simpleMessage("ログイン"),
+    "xboardSignInTip": MessageLookupByLibrary.simpleMessage(
+      "小雪空港サーバーにログインし、このアカウントの購読をインポートします。",
+    ),
+    "xboardSignOut": MessageLookupByLibrary.simpleMessage("ログアウト"),
+    "xboardSpeedLimit": MessageLookupByLibrary.simpleMessage("速度制限"),
+    "xboardSubscription": MessageLookupByLibrary.simpleMessage("購読"),
+    "xboardSubscriptionUnavailable": MessageLookupByLibrary.simpleMessage(
+      "利用できるプランがありません。期限切れか通信量の上限です",
+    ),
+    "xboardTelegram": MessageLookupByLibrary.simpleMessage("小雪空港 Telegram"),
+    "yearsAgo": m101,
+    "yearsAgoShort": m102,
     "yes": MessageLookupByLibrary.simpleMessage("はい"),
     "zhCN": MessageLookupByLibrary.simpleMessage("簡体字中国語"),
   };

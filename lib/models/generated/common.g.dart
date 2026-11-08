@@ -174,14 +174,14 @@ _DAVProps _$DAVPropsFromJson(Map<String, dynamic> json) => _DAVProps(
   user: json['user'] as String,
   password: json['password'] == null
       ? ''
-      : _decodeDavPassword(json['password'] as String?),
+      : decodeSecret(json['password'] as String?),
   fileName: json['fileName'] as String? ?? defaultDavFileName,
 );
 
 Map<String, dynamic> _$DAVPropsToJson(_DAVProps instance) => <String, dynamic>{
   'uri': instance.uri,
   'user': instance.user,
-  'password': _encodeDavPassword(instance.password),
+  'password': encodeSecret(instance.password),
   'fileName': instance.fileName,
 };
 

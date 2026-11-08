@@ -953,7 +953,9 @@ void main() {
       LiquidGlassMode modeOf(Object? value) =>
           ThemeProps.fromJson({'liquidGlass': value}).liquidGlass;
 
-      expect(modeOf(null), LiquidGlassMode.none);
+      // Absent means a config written before the switch existed, which now
+      // starts at the standard tier.
+      expect(modeOf(null), LiquidGlassMode.standard);
       expect(modeOf(true), LiquidGlassMode.standard);
       expect(modeOf(false), LiquidGlassMode.none);
       for (final mode in LiquidGlassMode.values) {

@@ -16,6 +16,7 @@ import 'package:fl_clash/providers/providers.dart';
 import 'package:fl_clash/state.dart';
 import 'package:fl_clash/views/disclaimer.dart';
 import 'package:fl_clash/views/navigation.dart';
+import 'package:fl_clash/views/profiles/xboard_auth.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/services.dart';
 import 'package:dynamic_color/dynamic_color.dart';
@@ -37,7 +38,7 @@ class Bootstrap {
   Future<ProviderContainer> init(int version) async {
     globalState.appEnv = const String.fromEnvironment(
       'APP_ENV',
-      defaultValue: 'pre',
+      defaultValue: 'stable',
     );
     windowPort = window;
     trayPort = appTray;
@@ -166,6 +167,9 @@ class Bootstrap {
     if (!await _handlerDisclaimer()) {
       return;
     }
+    if (!await _handlerAccount()) {
+      return;
+    }
     await _showCrashRecoveryTip();
     await _container.read(coreActionProvider.notifier).startCore();
     if (!_bootDecision.isDegraded) {
@@ -227,6 +231,22 @@ class Bootstrap {
   bool get _isDisclaimerAcceptedByEnvironment =>
       system.isDesktop &&
       Platform.environment['FLCLASH_ACCEPT_DISCLAIMER'] == '1';
+
+  /// The subscription, its plans and the profile all belong to an airport
+  /// account, so the app asks for one before it starts anything else.
+  Future<bool> _handlerAccount() async {
+    final account = _container.read(xboardSettingProvider);
+    if (account != null && account.subscribeToken.isNotEmpty) {
+      unawaited(_container.read(xboardActionProvider.notifier).sync(force: true));
+      return true;
+    }
+    final signedIn = await requestXboardSignIn();
+    if (!signedIn) {
+      await _container.read(systemActionProvider.notifier).handleExit();
+      return false;
+    }
+    return true;
+  }
 
   /// Android's exit only finishes the activity, so Dart keeps running after
   /// [SystemAction.handleExit] returns and must not go on to start the app.

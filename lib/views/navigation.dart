@@ -58,7 +58,7 @@ class Navigation implements NavigationPort {
             : [],
       ),
       NavigationItem(
-        glyph: AppGlyphs.tools,
+        glyph: AppGlyphs.settings,
         label: PageLabel.tools,
         builder: (_) => const ToolsView(),
         modes: [NavigationItemMode.desktop, NavigationItemMode.mobile],

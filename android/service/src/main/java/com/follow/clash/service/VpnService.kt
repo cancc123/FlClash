@@ -124,6 +124,13 @@ class VpnService : SystemVpnService(), ManagedService {
 
     private fun handleStart(options: VpnOptions) {
         val fd = with(Builder()) {
+            // This app is the tunnel's own client: its Core must reach the
+            // proxy servers over the physical network, or a UDP-based protocol
+            // is routed back into the tunnel it is building. The allow list
+            // path names the app explicitly and may not be mixed with this.
+            if (!options.accessControlProps.selectsApplications) {
+                addDisallowedApplication(packageName)
+            }
             addAddressAndRoutes(options)
             addDnsServers(options)
             setMtu(options.tunMtu)

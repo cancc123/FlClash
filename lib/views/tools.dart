@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:fl_clash/common/common.dart';
 import 'package:fl_clash/enum/enum.dart';
 import 'package:fl_clash/l10n/l10n.dart';
@@ -6,9 +7,10 @@ import 'package:fl_clash/providers/providers.dart';
 import 'package:fl_clash/ui/icons/icons.dart';
 import 'package:fl_clash/views/about.dart';
 import 'package:fl_clash/views/access.dart';
-import 'package:fl_clash/views/backup_and_restore.dart';
 import 'package:fl_clash/views/config/general.dart';
 import 'package:fl_clash/views/hotkey.dart';
+import 'package:fl_clash/views/profiles/xboard.dart';
+import 'package:fl_clash/views/profiles/xboard_auth.dart';
 import 'package:fl_clash/widgets/widgets.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -47,14 +49,14 @@ class _ToolViewState extends ConsumerState<ToolsView> {
   }
 
   Widget _getSettingList() {
+    // The page itself is titled 设置, so its first group carries no header.
     return generateSection(
-      title: context.appLocalizations.settings,
       items: [
+        const _XboardAccountItem(),
         const _LocaleItem(),
         const _ThemeItem(),
         if (system.isDesktop) const _HotkeyItem(),
         if (system.isAndroid) const _AccessItem(),
-        const _BackupItem(),
         const _AdvancedConfigItem(),
         const _GeneralItem(),
       ],
@@ -82,7 +84,7 @@ class _ToolViewState extends ConsumerState<ToolsView> {
       _getOtherList(developerMode),
     ];
     return Scaffold(
-      title: context.appLocalizations.tools,
+      title: context.appLocalizations.settings,
       body: Builder(
         builder: (context) => PrismListView(
           key: toolsStoreKey,
@@ -142,15 +144,25 @@ class _ThemeItem extends StatelessWidget {
   }
 }
 
-class _BackupItem extends StatelessWidget {
-  const _BackupItem();
+/// The airport account behind every subscription, and the way to buy one.
+class _XboardAccountItem extends ConsumerWidget {
+  const _XboardAccountItem();
 
   @override
-  Widget build(BuildContext context) {
-    return ListItem.open(
-      leading: const GlyphIcon(AppGlyphs.cloudSync),
-      title: Text(context.appLocalizations.backupAndRestore),
-      widget: const BackupAndRestore(),
+  Widget build(BuildContext context, WidgetRef ref) {
+    final signedIn = ref.watch(xboardAccountProvider) != null;
+    return ListItem(
+      leading: const GlyphIcon(AppGlyphs.account),
+      title: Text(context.appLocalizations.xboardAccount),
+      onTap: () {
+        if (!signedIn) {
+          unawaited(requestXboardSignIn());
+          return;
+        }
+        unawaited(
+          BaseNavigator.push<void>(context, const XboardAccountForm()),
+        );
+      },
     );
   }
 }

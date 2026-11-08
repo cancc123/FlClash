@@ -11,7 +11,11 @@ data class AccessControlProps(
     val mode: AccessControlMode,
     val acceptList: List<String>,
     val rejectList: List<String>,
-)
+) {
+    /** True when the tunnel is an allow list, which names packages one by one. */
+    val selectsApplications: Boolean
+        get() = enable && mode == AccessControlMode.ACCEPT_SELECTED
+}
 
 data class VpnOptions(
     val enable: Boolean,

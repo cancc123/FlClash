@@ -89,6 +89,15 @@ MoreToolsSelectorState moreToolsSelectorState(Ref ref) {
         navigationItemsStateProvider.select((state) {
           return SelectValue(
             state.value.where((element) {
+              // These three live on the dashboard's own routes here, not in the
+              // settings page this list feeds.
+              if (const {
+                PageLabel.requests,
+                PageLabel.resources,
+                PageLabel.dns,
+              }.contains(element.label)) {
+                return false;
+              }
               final isMore =
                   element.modes.contains(NavigationItemMode.more) ||
                   element.modes.contains(NavigationItemMode.moreFull);

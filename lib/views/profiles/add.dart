@@ -2,11 +2,10 @@ import 'dart:async';
 
 import 'package:fl_clash/common/common.dart';
 import 'package:fl_clash/features/form/form.dart';
-import 'package:fl_clash/pages/scan.dart';
 import 'package:fl_clash/plugins/app.dart';
 import 'package:fl_clash/providers/providers.dart';
 import 'package:fl_clash/ui/icons/icons.dart';
-import 'package:fl_clash/views/profiles/custom/custom.dart';
+import 'package:fl_clash/views/profiles/xboard.dart';
 import 'package:fl_clash/widgets/widgets.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -16,28 +15,6 @@ class AddProfileMenu extends ConsumerWidget {
   const AddProfileMenu({super.key, required this.builder});
 
   final Widget Function(PopupOpen open) builder;
-
-  Future<void> _handleAddProfileFormFile(WidgetRef ref) async {
-    unawaited(ref.read(profilesActionProvider.notifier).addProfileFormFile());
-  }
-
-  Future<void> _toScan(BuildContext context, WidgetRef ref) async {
-    final profilesAction = ref.read(profilesActionProvider.notifier);
-    if (system.isDesktop) {
-      unawaited(profilesAction.addProfileFormQrCode());
-      return;
-    }
-    final url = await BaseNavigator.push(context, const ScanPage());
-    if (url == null) {
-      return;
-    }
-    if (context.mounted) {
-      await whenRouteUncovered(context);
-    }
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      unawaited(profilesAction.addProfileFromLink(url));
-    });
-  }
 
   Future<void> _toAdd(BuildContext context, WidgetRef ref) async {
     final profilesAction = ref.read(profilesActionProvider.notifier);
@@ -82,6 +59,10 @@ class AddProfileMenu extends ConsumerWidget {
     }
   }
 
+  Future<void> _toXboard(BuildContext context) async {
+    await showXboardAccountSheet(context);
+  }
+
   Future<void> _toSendFromPhone(WidgetRef ref) async {
     final profilesAction = ref.read(profilesActionProvider.notifier);
     if (!(await app?.requestLocalNetworkPermission() ?? true)) {
@@ -112,18 +93,6 @@ class AddProfileMenu extends ConsumerWidget {
     }
   }
 
-  void _toAddCustom(BuildContext context, WidgetRef ref) {
-    final profileId = ref
-        .read(profilesActionProvider.notifier)
-        .addCustomProfile(context.appLocalizations.unnamed);
-    unawaited(
-      BaseNavigator.push(
-        context,
-        CustomProfileView(profileId: profileId, isNew: true),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final appLocalizations = context.appLocalizations;
@@ -132,19 +101,14 @@ class AddProfileMenu extends ConsumerWidget {
       popupBuilder: (_) => PopupMenu(
         items: [
           PopupMenuItem(
-            glyph: AppGlyphs.qrCode,
-            label: appLocalizations.qrcode,
-            onPressed: () => _toScan(context, ref),
-          ),
-          PopupMenuItem(
-            glyph: AppGlyphs.importFile,
-            label: appLocalizations.file,
-            onPressed: () => _handleAddProfileFormFile(ref),
-          ),
-          PopupMenuItem(
             glyph: AppGlyphs.cloudDownload,
             label: appLocalizations.link,
             onPressed: () => _toAdd(context, ref),
+          ),
+          PopupMenuItem(
+            glyph: AppGlyphs.account,
+            label: appLocalizations.xboardAccount,
+            onPressed: () => _toXboard(context),
           ),
           if (system.isTV)
             PopupMenuItem(
@@ -152,12 +116,6 @@ class AddProfileMenu extends ConsumerWidget {
               label: appLocalizations.sendFromPhone,
               onPressed: () => _toSendFromPhone(ref),
             ),
-          PopupMenuItem(
-            section: const PopupMenuSection(),
-            glyph: AppGlyphs.customize,
-            label: appLocalizations.customProfile,
-            onPressed: () => _toAddCustom(context, ref),
-          ),
         ],
       ),
     );

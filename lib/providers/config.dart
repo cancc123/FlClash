@@ -62,6 +62,14 @@ class DavSetting extends _$DavSetting with AutoDisposeNotifierMixin {
 }
 
 @riverpod
+class XboardSetting extends _$XboardSetting with AutoDisposeNotifierMixin {
+  @override
+  XboardAccount? build() {
+    return null;
+  }
+}
+
+@riverpod
 class HotKeyActions extends _$HotKeyActions with AutoDisposeNotifierMixin {
   @override
   List<HotKeyAction> build() {
@@ -104,6 +112,7 @@ Config _config(Ref ref) {
   final themeProps = ref.watch(themeSettingProvider);
   final currentProfileId = ref.watch(currentProfileIdProvider);
   final davProps = ref.watch(davSettingProvider);
+  final xboardAccount = ref.watch(xboardSettingProvider);
   final hotKeyActions = ref.watch(hotKeyActionsProvider);
   final proxiesStyleProps = ref.watch(proxiesStyleSettingProvider);
   final patchClashConfig = ref.watch(patchClashConfigProvider);
@@ -116,6 +125,7 @@ Config _config(Ref ref) {
     themeProps: themeProps,
     currentProfileId: currentProfileId,
     davProps: davProps,
+    xboardAccount: xboardAccount,
     hotKeyActions: hotKeyActions,
     proxiesStyleProps: proxiesStyleProps,
     patchClashConfig: patchClashConfig,
@@ -131,6 +141,7 @@ void writeConfig(Ref ref, Config config) {
   ref.read(themeSettingProvider.notifier).value = config.themeProps;
   ref.read(currentProfileIdProvider.notifier).value = config.currentProfileId;
   ref.read(davSettingProvider.notifier).value = config.davProps;
+  ref.read(xboardSettingProvider.notifier).value = config.xboardAccount;
   ref.read(hotKeyActionsProvider.notifier).value = config.hotKeyActions;
   ref.read(proxiesStyleSettingProvider.notifier).value =
       config.proxiesStyleProps;
@@ -150,6 +161,7 @@ List<Override> buildConfigOverrides(Config config) {
       (_, _) => config.currentProfileId,
     ),
     davSettingProvider.overrideWithBuild((_, _) => config.davProps),
+    xboardSettingProvider.overrideWithBuild((_, _) => config.xboardAccount),
     hotKeyActionsProvider.overrideWithBuild((_, _) => config.hotKeyActions),
     proxiesStyleSettingProvider.overrideWithBuild(
       (_, _) => config.proxiesStyleProps,
